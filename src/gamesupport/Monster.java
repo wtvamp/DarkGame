@@ -12,7 +12,7 @@ public class Monster {
         public String MonsterColor; 
         public int MonsterHealth = 100; 
         //Makes it so that Mons health will always be 100hp 
-        
+        public boolean MonsterIsAlive = true;
         //public int damageofMonster =  
     
         public Weapon primaryWeapon;
@@ -26,11 +26,11 @@ public class Monster {
             MonstersCreated++; 
             MonstersAlive++; 
         } 
-        public void KillMonster() { 
-            this.MonsterIsAlive = false; 
-            this.MonsterHealth = 0; 
-        } 
-        public string MonsterSpeak() { 
+        // public void KillMonster() { 
+        //     this.MonsterIsAlive = false; 
+        //     this.MonsterHealth = 0; 
+        // } 
+        public String MonsterSpeak() { 
             if (this.MonsterIsAlive) { 
                 return "The monster says " + this.MonsterSoundEffects;
             } 
@@ -39,7 +39,7 @@ public class Monster {
             }
         } 
     
-        public string WriteLnMonsterSummary() {
+        public String WriteLnMonsterSummary() {
             return "The monster's name is " + this.MonsterName + " and his health is " + this.MonsterHealth;
         }
     }
