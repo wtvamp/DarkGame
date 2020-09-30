@@ -14,7 +14,7 @@ public class Encounter {
         System.out.println(monsterHeFights.primaryWeapon.PrintWeaponStatus());
         System.out.print("Press ENTER to Continue\n");
         
-        Console.ReadLine();
+        System.out.ReadLine();
     }
 
     public void StartFighting() {
@@ -24,7 +24,7 @@ public class Encounter {
             System.out.println("What will he do");
             System.out.println("[1]Fight\n[2]Recover");
                     
-            string combatchoice;
+            String combatchoice;
             combatchoice = Console.ReadLine();
         
             switch(combatchoice)
