@@ -178,8 +178,8 @@ public static void main(String[] args){
                    
         if (choiceForkInTheRoad2.equals("1")){
             System.out.println(hero1.characterName + " needs to rest so " + hero2.characterName + " has to step in");
-            TV RandomTV = new TV (5,100);
-            System.out.println(hero1.characterName  + " has stumbled across a TV that is on channel " + RandomTV.channel + " and is " + RandomTV.size + " long and wide!");
+            //TV RandomTV = new TV (5,100);
+            //System.out.println(hero1.characterName  + " has stumbled across a TV that is on channel " + RandomTV.channel + " and is " + RandomTV.size + " long and wide!");
             choiceForkInTheRoad2 = System.console().readLine();// i dont like ur code
             Encounter fightTV = new Encounter(hero1, hero2, new Monster("Television", 100, "ZZzzzZ *Static*", "White", new Weapon(3, 3, "Electrecution", "Electric")));
             fightTV.StartFighting();
