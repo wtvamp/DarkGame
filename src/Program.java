@@ -1,4 +1,8 @@
-package gamesupport;
+import gamesupport.Encounter;
+import gamesupport.Monster;
+import gamesupport.SuperHero;
+import gamesupport.Weapon;
+
 public class Program {
 
 public static void main(String[] args){
