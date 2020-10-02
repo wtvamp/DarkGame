@@ -145,9 +145,6 @@ public static void main(String[] args){
     
     if (choiceTeamMate.equals("1"))
     {
-        
-         //for (int countGoblins = 1; countGoblins != 0; countGoblins--) {
-            //System.out.println("There is " + countGoblins + " monster left");
             Encounter fightGoblinOneAtAtime = new Encounter(hero1, hero2, new Monster("Goblin", 100, "Heehee", "Green", new Weapon(3, 3, "Spear", "Physical")));
             fightGoblinOneAtAtime.StartFighting();
             
@@ -182,9 +179,7 @@ public static void main(String[] args){
                    
         if (choiceForkInTheRoad2.equals("1")){
             System.out.println(hero1.characterName + " needs to rest so " + hero2.characterName + " has to step in");
-            //TV RandomTV = new TV (5,100);
-            //System.out.println(hero1.characterName  + " has stumbled across a TV that is on channel " + RandomTV.channel + " and is " + RandomTV.size + " long and wide!");
-            choiceForkInTheRoad2 = System.console().readLine();// i dont like ur code
+            choiceForkInTheRoad2 = System.console().readLine();
             Encounter fightTV = new Encounter(hero1, hero2, new Monster("Television", 100, "ZZzzzZ *Static*", "White", new Weapon(3, 3, "Electrecution", "Electric")));
             fightTV.StartFighting();
         }
@@ -195,8 +190,8 @@ public static void main(String[] args){
 
         String choiceForkInTheRoad;
         choiceForkInTheRoad = System.console().readLine();
+
         switch (choiceForkInTheRoad)
-        
         {
         case "1":
             System.out.println(hero1.characterName + " stumbled against a zombie.");
@@ -208,16 +203,12 @@ public static void main(String[] args){
         }
         Encounter fightzombie = new Encounter(hero1, hero2, new Monster("Zombie", 100,"rauggghh", "grey", new Weapon( 3,3, "Bite","physical"))); 
         fightzombie.StartFighting();
-        // System.out.println("\n");
-        // System.out.println("Press Enter to Continue");
-        // System.console().readLine();
+
         System.out.println("After killing the zombie, He rushes through the endless forces of the undead. \nTired and fatigued, he decides to take a nap in a coffin which is out of sight of the undead. \nHe closes his eyes seeing the sunset. \nHe’s disturbed by the sound of chattering teeth. \nHe sits up and looks through the empty eye sockets of a human, a skeleton.");
         Encounter fightskeleton = new Encounter(hero1, hero2, new Monster( "Skeleton",100, "crackel", "white", new Weapon(4,4, "Bone", "physical")));
         fightskeleton.StartFighting();
         System.out.println("The last hit disassembled all the joints of the skeleton. It falls apart laughing. He begins running to the exit. \n");
         System.out.println("\n");
-        //System.out.println("Press Enter To Continue");
-        //System.console().readLine();
 
         System.out.println("\nThere is another fork in the road");
         System.out.println("[1]Go left");
@@ -233,32 +224,11 @@ public static void main(String[] args){
         System.out.println("The final hit makes the ghost realize " + hero1.characterName + " is worthy of living and fades away from his sight. " + hero1.characterName + " returns to his body and continues forward.");
         System.out.println("\n");
         System.out.println("Press Enter To Continue");
-        System.console().readLine(); //im so bored of this
+        System.console().readLine();
 
         System.out.println ("================================================");
         System.out.println ("----------WINNER-WINNER-CHICKEN-DINNER----------");
         System.out.println ("================================================");                
-        }
-        // WJT:I didn't show you this yet - but because you are using System; on the first 
-        // line of this program, you get Random from the System library - so you could 
-
-        
-        /*
-        System.Random random = new System.Random(); 
-        int num = random.Next(10,50); //makes random number between 10 and 50
-        System.out.println(num); //writes the random number (Monster attack)
-        int health = 100; //our example health would be 100
-        num =- health; //subracts the mosnter attck from our health
-        System.out.println(health); //Writes our health after attck
-        */
-
-        
-        //scene 1 compete
-        // for (int countGoblins = 1; countGoblins != 0; countGoblins--) {
-        //     System.out.println("There are " + countGoblins + " monsters left");
-        //      Encounter fightGoblinOneAtAtime = new Encounter(hero1, new Monster("Goblin", 100, "Heehee", "Green", new Weapon(3, 3, "Spear", "Physical")));
-        //     fightGoblinOneAtAtime.StartFighting();
-        
+        }       
     }
 }
-
