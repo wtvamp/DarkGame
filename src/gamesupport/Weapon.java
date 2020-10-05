@@ -1,6 +1,6 @@
 package gamesupport;
 
-public class Weapons {
+public class Weapon {
     
 
 public int numOfAllowedAttacks;
@@ -8,7 +8,7 @@ public int numOfAllowedAttacks;
     public String weaponName;
     public String attackType;
 
-    public Weapon(int allowedAttacksFromApp, int attackCounterFromApp, String weaponNameFromApp, String attackTypeFromApp = "Normal")
+    public Weapon(int allowedAttacksFromApp, int attackCounterFromApp, String weaponNameFromApp, String attackTypeFromApp)
     {
         this.numOfAllowedAttacks = allowedAttacksFromApp;
         this.attackCounter = attackCounterFromApp;
