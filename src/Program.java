@@ -1,6 +1,7 @@
 import gamesupport.Encounter;
 import gamesupport.Menu;
 import gamesupport.Monster;
+import gamesupport.PartnerMenu;
 import gamesupport.SuperHero;
 import gamesupport.Weapon;
 
@@ -24,10 +25,11 @@ public static void main(String[] args){
        
     Menu heroChoice = new Menu();
 
+    PartnerMenu partnerChoice = new PartnerMenu();
     heroChoice.printMenu();
     hero = heroChoice.chooseHero();
-    heroChoice.printMenu();
-    sidekick = heroChoice.chooseHero();
+    partnerChoice.printMenu();
+    sidekick = partnerChoice.chooseHero();
 
     if(choice.equals(choice2)){
         System.out.println("You got your own doppleganger to kill you and replaced you");

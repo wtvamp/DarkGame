@@ -4,7 +4,7 @@ public class Menu {
     private String choice;
     
     public void printMenu() {
-        //System.out.println("Select " + hero.HeroName + "'s partner");
+        
         System.out.println("[1]Wizard");
         System.out.println("[2]Ninja");
         System.out.println("[3]Vampire Hunter");
