@@ -1,4 +1,5 @@
 import gamesupport.Encounter;
+import gamesupport.Menu;
 import gamesupport.Monster;
 import gamesupport.SuperHero;
 import gamesupport.Weapon;
@@ -9,7 +10,9 @@ public static void main(String[] args){
 {
     // WJT: Leave comments like this at points where you get stuck and need me to take a look
     //Begining of game - scene 1 
-    
+    SuperHero hero;   
+    SuperHero sidekick;
+
     System.out.println ("========================================");
     System.out.println ("----------A-WORLD-OF-FATE----------");
     System.out.println ("========================================");
@@ -17,90 +20,15 @@ public static void main(String[] args){
     System.out.println("Welcome to your demise! >:D");
     System.out.println("Try to survive as long as you can you wretched humans!");
     System.out.println("Press Enter to Continue!");
-    System.console().readLine();
-    System.out.println("Choose Your Character \n Each character has different abilities so choose wisely.");
-    System.out.println("[1]Wizard");
-    System.out.println("[2]Ninja");
-    System.out.println("[3]Vampire Hunter");
-    System.out.println("[4]Soldier");
-    System.out.println("[5]Superhero");
-    System.out.println("[6]Just some guy");            
-    Weapon secondaryWeapon = new Weapon(0, 8, "Garlic", "Holy");
-    
-    SuperHero hero1;          
-    String choice;
-    SuperHero hero2;
-    String choice2;
-    
-    choice = System.console().readLine();
-    
-    switch (choice)
-    {
-        case "1":
-            System.out.println("Wizard");
-            hero1 = new SuperHero("Wizard",  new Weapon(8, 8, "Staff", "Magic"), secondaryWeapon, 100,"Alex", 45);
-            break;
-        case "2":
-            System.out.println("Ninja");
-            hero1 = new SuperHero("Ninja",  new Weapon(10, 10, "Ninja Star", "Combat"), secondaryWeapon, 100, "Jaime", 35);
-            break;
-        case "3":
-            System.out.println("Vampire Hunter");
-            hero1 = new SuperHero("Vampire Hunter", new Weapon(12, 12, "Hunter's Crossbow", "Arrow"), secondaryWeapon, 100,"Angel", 25);
-            break;
-        case "4":
-            System.out.println("Soldier");
-            hero1 = new SuperHero("Soldier", new Weapon(6, 6, "Revolver", "Pistol Whip"), secondaryWeapon, 100, "Miguel", 75);
-            break;
-        case "5":
-            System.out.println("SuperHero");
-            hero1 = new SuperHero("SuperHero", new Weapon(20, 20, "Super Genetics", "Stamina"), secondaryWeapon,100,"Emanuel", 20);
-            break;
-        default:
-            hero1 = new SuperHero("Just some guy",  new Weapon(4, 4, "Skyrim Shout", "Sore throat"), secondaryWeapon, 100, "Warren", 100);
-            System.out.println("Other");
-            break;        
-    }
-    System.out.println("You have selected " + hero1.HeroName + "\n \nYour name is " + hero1.characterName + "\n \n");
-    //2nd character
-    System.out.println("Select " + hero1.HeroName + "'s partner");
-    System.out.println("[1]Wizard");
-    System.out.println("[2]Ninja");
-    System.out.println("[3]Vampire Hunter");
-    System.out.println("[4]Soldier");
-    System.out.println("[5]Superhero");
-    System.out.println("[6]Just some guy");  
-    choice2 = System.console().readLine();
-    
-    switch (choice2)
-    {
-        case "1":
-            System.out.println("Wizard");
-            hero2 = new SuperHero("Wizard",  new Weapon(8, 8, "Staff", "Magic"), secondaryWeapon, 100,"Alex", 45);
-            break;
-        case "2":
-            System.out.println("Ninja");
-            hero2 = new SuperHero("Ninja",  new Weapon(10, 10, "Ninja Star", "Combat"), secondaryWeapon, 100, "Jaime", 35);
-            break;
-        case "3":
-            System.out.println("Vampire Hunter");
-            hero2 = new SuperHero("Vampire Hunter", new Weapon(12, 12, "Hunter's Crossbow", "Arrow"), secondaryWeapon, 100,"Angel", 25);
-            break;
-        case "4":
-            System.out.println("Soldier");
-            hero2 = new SuperHero("Soldier", new Weapon(6, 6, "Revolver", "Pistol Whip"), secondaryWeapon, 100, "Miguel", 75);
-            break;
-        case "5":
-            System.out.println("SuperHero");
-            hero2 = new SuperHero("SuperHero", new Weapon(20, 20, "Super Genetics", "Stamina"), secondaryWeapon,100,"Emanuel", 20);
-            break;
-        default:
-            hero2 = new SuperHero("Just some guy",  new Weapon(4, 4, "Skyrim Shout", "Sore throat"), secondaryWeapon, 100, "Warren", 100);
-            System.out.println("Other");
-            break;        
-    }
-    System.out.println("Your partner is " + hero2.characterName + "\n \nAnd he is a " + hero2.HeroName + "\n \n");
-    //End
+    System.console().readLine();    
+       
+    Menu heroChoice = new Menu();
+
+    heroChoice.printMenu();
+    hero = heroChoice.chooseHero();
+    heroChoice.printMenu();
+    sidekick = heroChoice.chooseHero();
+
     if(choice.equals(choice2)){
         System.out.println("You got your own doppleganger to kill you and replaced you");
         System.console().readLine();
