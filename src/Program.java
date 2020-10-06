@@ -31,13 +31,13 @@ public static void main(String[] args){
     partnerChoice.printMenu();
     sidekick = partnerChoice.chooseHero();
 
-    if(choice.equals(choice2)){
+    if(hero.equals(sidekick)){
         System.out.println("You got your own doppleganger to kill you and replaced you");
         System.console().readLine();
         System.exit(0);
     }
     //if statement
-    System.out.println( hero1.characterName + " wakes up in a body bag and notices that he is in a dark forest, all he knows is that he must escape, even if it cost’s his life.\nThe air is full of fog and all he sees is nothing but dead animals and human body parts scattered across the branches of the trees. \n" + hero1.characterName + " is going to have to figure out a way of this death maze.");
+    System.out.println( hero.characterName + " wakes up in a body bag and notices that he is in a dark forest, all he knows is that he must escape, even if it cost’s his life.\nThe air is full of fog and all he sees is nothing but dead animals and human body parts scattered across the branches of the trees. \n" + hero1.characterName + " is going to have to figure out a way of this death maze.");
     System.out.println("\n");
     System.out.println("Press ENTER to continue \n");
 
