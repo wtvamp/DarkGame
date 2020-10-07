@@ -24,10 +24,13 @@ public static void main(String[] args){
     System.console().readLine();    
        
     Menu heroChoice = new Menu();
-
     PartnerMenu partnerChoice = new PartnerMenu();
+
+    System.out.println("Please choose your character to start:");
     heroChoice.printMenu();
     hero = heroChoice.chooseHero();
+
+    System.out.println("Please choose a sidekick to accompany you on this journey:");
     partnerChoice.printMenu();
     sidekick = partnerChoice.chooseHero();
 
@@ -37,7 +40,7 @@ public static void main(String[] args){
         System.exit(0);
     }
     //if statement
-    System.out.println( hero.characterName + " wakes up in a body bag and notices that he is in a dark forest, all he knows is that he must escape, even if it cost’s his life.\nThe air is full of fog and all he sees is nothing but dead animals and human body parts scattered across the branches of the trees. \n" + hero1.characterName + " is going to have to figure out a way of this death maze.");
+    System.out.println(hero.characterName + " wakes up in a body bag and notices that he is in a dark forest, all he knows is that he must escape, even if it cost’s his life.\nThe air is full of fog and all he sees is nothing but dead animals and human body parts scattered across the branches of the trees. \n" + hero.characterName + " is going to have to figure out a way of this death maze.");
     System.out.println("\n");
     System.out.println("Press ENTER to continue \n");
 
@@ -53,10 +56,10 @@ public static void main(String[] args){
     switch (choiceTeamMate)
     { 
         case "1":
-            System.out.println(hero1.characterName + " left him behind \n");
+            System.out.println(hero.characterName + " left him behind \n");
             break;
         case "2":
-            System.out.println(hero1.characterName + " decided to carry the poor thing \n");
+            System.out.println(hero.characterName + " decided to carry the poor thing \n");
             break;
     }
      
@@ -75,7 +78,7 @@ public static void main(String[] args){
     
     if (choiceTeamMate.equals("1"))
     {
-            Encounter fightGoblinOneAtAtime = new Encounter(hero1, hero2, new Monster("Goblin", 100, "Heehee", "Green", new Weapon(3, 3, "Spear", "Physical")));
+            Encounter fightGoblinOneAtAtime = new Encounter(hero, sidekick, new Monster("Goblin", 100, "Heehee", "Green", new Weapon(3, 3, "Spear", "Physical")));
             fightGoblinOneAtAtime.StartFighting();
             
             System.out.println("Now that he has defeated the Goblin, the goblin's body morphs into black dust and fades away. \nSomething has to be up with this forest. \nHe starts wandering in the forest, everything starts looking the same. \nHe powers through because he remembers that he has something to fight for. \nHe starts to see stone structures in the distance. \nHe walks towards them.");
@@ -84,7 +87,7 @@ public static void main(String[] args){
             System.console().readLine();
         }
 
-        System.out.println("After exiting the forest, his shoes crunched to the sound of bones and gravel.\n " + hero1.characterName + " witnessed the dead become animated crawling out of their graves. \nThe graveyard had become a corpse party. \nDetermined with the fierce will to live, " + hero1.characterName + " ready your weapon for the next encounter.");
+        System.out.println("After exiting the forest, his shoes crunched to the sound of bones and gravel.\n " + hero.characterName + " witnessed the dead become animated crawling out of their graves. \nThe graveyard had become a corpse party. \nDetermined with the fierce will to live, " + hero.characterName + " ready your weapon for the next encounter.");
         System.out.println("\n");
         System.out.println("Press Enter To Continue");
         System.console().readLine();
@@ -100,17 +103,17 @@ public static void main(String[] args){
         switch (choiceForkInTheRoad2)
         { 
         case "1":
-            System.out.println(hero1.characterName + " has found a mysterious Television floating");
+            System.out.println(hero.characterName + " has found a mysterious Television floating");
             break;
         case "2":
-            System.out.println(hero1.characterName + " gets bitten by a Zombie");
+            System.out.println(hero.characterName + " gets bitten by a Zombie");
             break;
         }
                    
         if (choiceForkInTheRoad2.equals("1")){
-            System.out.println(hero1.characterName + " needs to rest so " + hero2.characterName + " has to step in");
+            System.out.println(hero.characterName + " needs to rest so " + sidekick.characterName + " has to step in");
             choiceForkInTheRoad2 = System.console().readLine();
-            Encounter fightTV = new Encounter(hero1, hero2, new Monster("Television", 100, "ZZzzzZ *Static*", "White", new Weapon(3, 3, "Electrecution", "Electric")));
+            Encounter fightTV = new Encounter(hero, sidekick, new Monster("Television", 100, "ZZzzzZ *Static*", "White", new Weapon(3, 3, "Electrecution", "Electric")));
             fightTV.StartFighting();
         }
         
@@ -124,18 +127,18 @@ public static void main(String[] args){
         switch (choiceForkInTheRoad)
         {
         case "1":
-            System.out.println(hero1.characterName + " stumbled against a zombie.");
+            System.out.println(hero.characterName + " stumbled against a zombie.");
             break;
         case "2":
-            System.out.println(hero1.characterName + " got wrecked by numerous forces.");
+            System.out.println(hero.characterName + " got wrecked by numerous forces.");
             System.exit(0x0);
             break;
         }
-        Encounter fightzombie = new Encounter(hero1, hero2, new Monster("Zombie", 100,"rauggghh", "grey", new Weapon( 3,3, "Bite","physical"))); 
+        Encounter fightzombie = new Encounter(hero, sidekick, new Monster("Zombie", 100,"rauggghh", "grey", new Weapon( 3,3, "Bite","physical"))); 
         fightzombie.StartFighting();
 
         System.out.println("After killing the zombie, He rushes through the endless forces of the undead. \nTired and fatigued, he decides to take a nap in a coffin which is out of sight of the undead. \nHe closes his eyes seeing the sunset. \nHe’s disturbed by the sound of chattering teeth. \nHe sits up and looks through the empty eye sockets of a human, a skeleton.");
-        Encounter fightskeleton = new Encounter(hero1, hero2, new Monster( "Skeleton",100, "crackel", "white", new Weapon(4,4, "Bone", "physical")));
+        Encounter fightskeleton = new Encounter(hero, sidekick, new Monster( "Skeleton",100, "crackel", "white", new Weapon(4,4, "Bone", "physical")));
         fightskeleton.StartFighting();
         System.out.println("The last hit disassembled all the joints of the skeleton. It falls apart laughing. He begins running to the exit. \n");
         System.out.println("\n");
@@ -144,14 +147,14 @@ public static void main(String[] args){
         System.out.println("[1]Go left");
         System.out.println("[2]Go right");
         
-        System.out.println("He runs out of the graveyard." + hero1.characterName + " stops to close his eyes and pray to the gods for their guidance. He feels a cold chill pass through his body." + hero1.characterName +
-        " opens his eyes and sees his own body lying on the floor. A humanoid figure in the form of mist is trying to take his soul away from his body." + hero1.characterName + "s determined soul chases the entity to confront the ghost.");
+        System.out.println("He runs out of the graveyard." + hero.characterName + " stops to close his eyes and pray to the gods for their guidance. He feels a cold chill pass through his body." + hero.characterName +
+        " opens his eyes and sees his own body lying on the floor. A humanoid figure in the form of mist is trying to take his soul away from his body." + hero.characterName + "s determined soul chases the entity to confront the ghost.");
         System.out.println("\n");
         System.out.println("Press Enter To Continue");
         System.console().readLine();
-        Encounter fightghost = new Encounter(hero1, hero2,new Monster("Ghost",200,"BOO BOO","Transperent", new Weapon(4,4,"Memory Loss"," Mental")));
+        Encounter fightghost = new Encounter(hero, sidekick,new Monster("Ghost",200,"BOO BOO","Transperent", new Weapon(4,4,"Memory Loss"," Mental")));
         fightghost.StartFighting();
-        System.out.println("The final hit makes the ghost realize " + hero1.characterName + " is worthy of living and fades away from his sight. " + hero1.characterName + " returns to his body and continues forward.");
+        System.out.println("The final hit makes the ghost realize " + hero.characterName + " is worthy of living and fades away from his sight. " + hero.characterName + " returns to his body and continues forward.");
         System.out.println("\n");
         System.out.println("Press Enter To Continue");
         System.console().readLine();
