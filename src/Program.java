@@ -12,7 +12,7 @@ public static void main(String[] args){
     // WJT: Leave comments like this at points where you get stuck and need me to take a look
     //Begining of game - scene 1 
     SuperHero hero;   
-    SuperHero sidekick;
+    SuperHero sidekick; 
 
     System.out.println ("========================================");
     System.out.println ("----------A-WORLD-OF-FATE----------");
