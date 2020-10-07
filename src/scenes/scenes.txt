@@ -1,0 +1,30 @@
+@heroName wakes up in a body bag and notices that he is in a dark forest, all he knows is that he must escape, even if it cost’s his life. \n
+The air is full of fog and all he sees is nothing but dead animals and human body parts scattered across the branches of the trees. \n
+@heroName is going to have to figure out a way of this death maze.
+--
+As he was walking, he stumbled across a teammate that is severely injured.  What should he do?"
+[1] Leave him
+[2] Carry him
+--
+[1] @heroName left him behind\n
+[2] @heroName decided to carry the poor thing\nWhile he was carrying him,\nAn unknown spear came and wasn't able to dodge it fast enough.\n GAME OVER
+----
+Now that he has defeated the @monsterName, the @monsterName's body morphs into black dust and fades away. \n
+Something has to be up with this forest. \n
+He starts wandering in the forest, everything starts looking the same. \n
+He powers through because he remembers that he has something to fight for. \n
+He starts to see stone structures in the distance. \n
+He walks towards them.
+----
+After exiting the forest, his shoes crunched to the sound of bones and gravel.\n
+@herName witnessed the dead become animated crawling out of their graves. \n
+The graveyard had become a corpse party. \n
+Determined with the fierce will to live, @herName readies their weapon for the next encounter.
+--
+There's a fork in the road
+[1]Go left
+[2]Go right
+--
+[1] @heroName has found a mysterious Television floating.\n@heroName needs to rest so @partnerName has to step in\n ENCOUNTER
+[2] @heroName gets bitten by a Zombie ENCOUNTER
+----
