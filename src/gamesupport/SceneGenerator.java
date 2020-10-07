@@ -18,7 +18,7 @@ public class SceneGenerator {
     }
 
     public void printStoryline() {
-
+        
     }
     
     public String makeChoice() {
