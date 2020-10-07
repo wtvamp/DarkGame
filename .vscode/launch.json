@@ -8,6 +8,13 @@
             "type": "java",
             "name": "CodeLens (Launch) - Program",
             "request": "launch",
+            "mainClass": "Program",
+            "projectName": "DarkGame_3433baac"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Program",
+            "request": "launch",
             "mainClass": "gamesupport.Program",
             "projectName": "DarkGame-1_24c93f82"
         },

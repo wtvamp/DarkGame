@@ -1,7 +1,11 @@
+import java.util.List;
+import java.util.ArrayList;
+
 import gamesupport.Encounter;
 import gamesupport.Monster;
 import gamesupport.SuperHero;
 import gamesupport.Weapon;
+import gamesupport.SceneGenerator;
 
 public class Program {
 
@@ -101,58 +105,46 @@ public static void main(String[] args){
     }
     System.out.println("Your partner is " + hero2.characterName + "\n \nAnd he is a " + hero2.HeroName + "\n \n");
     //End
-    if(choice.equals(choice2)){
+    if (choice.equals(choice2)) {
         System.out.println("You got your own doppleganger to kill you and replaced you");
         System.console().readLine();
         System.exit(0);
     }
-    //if statement
-    System.out.println( hero1.characterName + " wakes up in a body bag and notices that he is in a dark forest, all he knows is that he must escape, even if it cost’s his life.\nThe air is full of fog and all he sees is nothing but dead animals and human body parts scattered across the branches of the trees. \n" + hero1.characterName + " is going to have to figure out a way of this death maze.");
-    System.out.println("\n");
-    System.out.println("Press ENTER to continue \n");
 
-    System.out.println("As he was walking, he stumbled across a teammate that is severely injured.");
-    System.out.println("What should he do? \n");
-    System.out.println("[1]Leave him");
-    System.out.println("[2]Carry him");
+    String firstSceneDesc = hero1.HeroName + " wakes up in a body bag and notices that he is in a dark forest";
+    firstSceneDesc += " all he knows is that he must escape, even if it cost’s his life.\n";
+    firstSceneDesc += " The air is full of fog and all he sees is nothing but dead animals and ";
+    firstSceneDesc += " human body parts scattered across the branches of the trees. \n";
+    firstSceneDesc += hero1.characterName;
+    firstSceneDesc += " is going to have to figure out a way of this death maze.";
+
+    String firstSceneChoice = "As he was walking, he stumbled across a teammate that is severely injured.\nWhat should he do?\n";
+    List<String> firstScenelistOfChoices = new ArrayList<String>();
+    firstScenelistOfChoices.add("[1]Leave him\n");
+    firstScenelistOfChoices.add("[2]Carry him\n");
+    List<String> firstSceneListOfResponses = new ArrayList<String>();
+    firstSceneListOfResponses.add(hero1.characterName + " left him behind \n");
+    firstSceneListOfResponses.add(hero1.characterName + " decided to carry the poor thing \n");
+
+    SceneGenerator firstScene = new SceneGenerator(firstSceneDesc, firstSceneChoice, firstScenelistOfChoices, firstSceneListOfResponses, hero1);
+    firstScene.printStoryline();
+    String firstSceneChoiceAnswer = firstScene.makeChoice(); 
     
-    String choiceTeamMate;
-
-    choiceTeamMate = System.console().readLine();
-     
-    switch (choiceTeamMate)
-    { 
-        case "1":
-            System.out.println(hero1.characterName + " left him behind \n");
-            break;
-        case "2":
-            System.out.println(hero1.characterName + " decided to carry the poor thing \n");
-            break;
-    }
-     
-    if (choiceTeamMate.equals("2"))
+    
+    if (firstSceneChoiceAnswer.equals("2"))
     {
         System.out.println("While he was carrying him,\nAn unknown spear came and wasn't able to dodge it fast enough");
         System.out.println("GAME OVER");
         System.exit(0);
 
     } else {
+        Encounter fightGoblinOneAtAtime = new Encounter(hero1, hero2, new Monster("Goblin", 100, "Heehee", "Green", new Weapon(3, 3, "Spear", "Physical")));
+        fightGoblinOneAtAtime.StartFighting();        
+        System.out.println("Now that he has defeated the Goblin, the goblin's body morphs into black dust and fades away. \nSomething has to be up with this forest. \nHe starts wandering in the forest, everything starts looking the same. \nHe powers through because he remembers that he has something to fight for. \nHe starts to see stone structures in the distance. \nHe walks towards them.");
         System.out.println("\n");
         System.out.println("Press Enter To Continue");
-
         System.console().readLine();
     }
-    
-    if (choiceTeamMate.equals("1"))
-    {
-            Encounter fightGoblinOneAtAtime = new Encounter(hero1, hero2, new Monster("Goblin", 100, "Heehee", "Green", new Weapon(3, 3, "Spear", "Physical")));
-            fightGoblinOneAtAtime.StartFighting();
-            
-            System.out.println("Now that he has defeated the Goblin, the goblin's body morphs into black dust and fades away. \nSomething has to be up with this forest. \nHe starts wandering in the forest, everything starts looking the same. \nHe powers through because he remembers that he has something to fight for. \nHe starts to see stone structures in the distance. \nHe walks towards them.");
-            System.out.println("\n");
-            System.out.println("Press Enter To Continue");
-            System.console().readLine();
-        }
 
         System.out.println("After exiting the forest, his shoes crunched to the sound of bones and gravel.\n " + hero1.characterName + " witnessed the dead become animated crawling out of their graves. \nThe graveyard had become a corpse party. \nDetermined with the fierce will to live, " + hero1.characterName + " ready your weapon for the next encounter.");
         System.out.println("\n");
