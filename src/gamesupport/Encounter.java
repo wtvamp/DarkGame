@@ -10,6 +10,7 @@ public class Encounter {
     private SuperHero herofighting2;
     private SuperHero heroFighting;
     private Monster monsterHeFights;
+    
     public Encounter(SuperHero herofightingfromapp, SuperHero herofighting2fromapp, Monster monsterhefightsfromapp ) { 
         this.heroFighting = herofightingfromapp;
         this.monsterHeFights = monsterhefightsfromapp; 
