@@ -3,10 +3,10 @@ package gamesupport;
 import java.util.List;
 
 public class SceneGenerator {
-    private String storyLine;
+    private String storyLine; 
     private Encounter monsterEncount; 
     private SuperHero hero; 
-    private String choicePrompt;
+    private String choicePrompt; 
     private List<String> choiceQuestions; 
     private String choiceAnswer; 
     private List<String> choiceResponses;
@@ -14,7 +14,7 @@ public class SceneGenerator {
     private Monster enemy; 
 
     public SceneGenerator(String storyLineFromApp, SuperHero heroFromApp, SuperHero sidekickFromApp, String choiceQuestionFromApp, String choiceAnswerFromApp, Monster enemyFromApp) {
-
+        
     }
 
     public SceneGenerator(String storyLineFromApp, String choicePromptFromApp, List<String> choiceQuestionFromApp, List<String> choiceResponsesFromApp, SuperHero heroFromApp) {

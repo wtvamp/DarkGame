@@ -110,7 +110,7 @@ public static void main(String[] args){
         System.console().readLine();
         System.exit(0);
     }
-
+    //first scene
     String firstSceneDesc = hero1.HeroName + " wakes up in a body bag and notices that he is in a dark forest";
     firstSceneDesc += " all he knows is that he must escape, even if it cost’s his life.\n";
     firstSceneDesc += " The air is full of fog and all he sees is nothing but dead animals and ";
@@ -145,82 +145,92 @@ public static void main(String[] args){
         System.out.println("Press Enter To Continue");
         System.console().readLine();
     }
+    //first end
 
-        System.out.println("After exiting the forest, his shoes crunched to the sound of bones and gravel.\n " + hero1.characterName + " witnessed the dead become animated crawling out of their graves. \nThe graveyard had become a corpse party. \nDetermined with the fierce will to live, " + hero1.characterName + " ready your weapon for the next encounter.");
-        System.out.println("\n");
-        System.out.println("Press Enter To Continue");
+    //Second Start
+        String secondSceneDes = "After exiting the forest, his shoes crunched to the sound of bones and gravel.\n " + hero1.characterName + " witnessed the dead become animated crawling out of their graves. \nThe graveyard had become a corpse party. \nDetermined with the fierce will to live, " + hero1.characterName + " ready your weapon for the next encounter.";
+        secondSceneDes += ("\n");
         System.console().readLine();
 
-        System.out.println("There's a fork in the road");
-        System.out.println("[1]Go left");
-        System.out.println("[2]Go right");
+        String secondSceneChoice = "There's a fork in the road";
         
+        List<String> SecondScenelistOfChoices = new ArrayList<String>();
+        SecondScenelistOfChoices.add("[1]Go left");
+        SecondScenelistOfChoices.add("[2]Go right");
         
-        String choiceForkInTheRoad2;
+        List<String> secondScenelistOfResponses = new ArrayList<String>();
+        secondScenelistOfResponses.add(hero1.characterName + " has found a mysterious Television floating");
+        secondScenelistOfResponses.add(hero1.characterName + " gets bitten by a Zombie");
+        
+        SceneGenerator secondScene = new SceneGenerator(secondSceneDes, secondSceneChoice, SecondScenelistOfChoices, secondScenelistOfResponses, hero1);
+        secondScene.printStoryline();
+        String SecondSceneChoiceAnswer = secondScene.makeChoice();
 
-        choiceForkInTheRoad2 = System.console().readLine();
-        switch (choiceForkInTheRoad2)
-        { 
-        case "1":
-            System.out.println(hero1.characterName + " has found a mysterious Television floating");
-            break;
-        case "2":
-            System.out.println(hero1.characterName + " gets bitten by a Zombie");
-            break;
-        }
-                   
-        if (choiceForkInTheRoad2.equals("1")){
+        if (SecondSceneChoiceAnswer.equals("1")){
             System.out.println(hero1.characterName + " needs to rest so " + hero2.characterName + " has to step in");
-            choiceForkInTheRoad2 = System.console().readLine();
             Encounter fightTV = new Encounter(hero1, hero2, new Monster("Television", 100, "ZZzzzZ *Static*", "White", new Weapon(3, 3, "Electrecution", "Electric")));
             fightTV.StartFighting();
-        }
-        
-        if (choiceForkInTheRoad2.equals("2")){
+        } else {
             System.out.println("GAMEOVER you died to dysentry");
         }
 
-        String choiceForkInTheRoad;
-        choiceForkInTheRoad = System.console().readLine();
-
-        switch (choiceForkInTheRoad)
-        {
-        case "1":
-            System.out.println(hero1.characterName + " stumbled against a zombie.");
-            break;
-        case "2":
-            System.out.println(hero1.characterName + " got wrecked by numerous forces.");
-            System.exit(0x0);
-            break;
-        }
-        Encounter fightzombie = new Encounter(hero1, hero2, new Monster("Zombie", 100,"rauggghh", "grey", new Weapon( 3,3, "Bite","physical"))); 
-        fightzombie.StartFighting();
-
-        System.out.println("After killing the zombie, He rushes through the endless forces of the undead. \nTired and fatigued, he decides to take a nap in a coffin which is out of sight of the undead. \nHe closes his eyes seeing the sunset. \nHe’s disturbed by the sound of chattering teeth. \nHe sits up and looks through the empty eye sockets of a human, a skeleton.");
-        Encounter fightskeleton = new Encounter(hero1, hero2, new Monster( "Skeleton",100, "crackel", "white", new Weapon(4,4, "Bone", "physical")));
-        fightskeleton.StartFighting();
-        System.out.println("The last hit disassembled all the joints of the skeleton. It falls apart laughing. He begins running to the exit. \n");
-        System.out.println("\n");
-
-        System.out.println("\nThere is another fork in the road");
-        System.out.println("[1]Go left");
-        System.out.println("[2]Go right");
+        //second End
         
-        System.out.println("He runs out of the graveyard." + hero1.characterName + " stops to close his eyes and pray to the gods for their guidance. He feels a cold chill pass through his body." + hero1.characterName +
-        " opens his eyes and sees his own body lying on the floor. A humanoid figure in the form of mist is trying to take his soul away from his body." + hero1.characterName + "s determined soul chases the entity to confront the ghost.");
-        System.out.println("\n");
-        System.out.println("Press Enter To Continue");
-        System.console().readLine();
-        Encounter fightghost = new Encounter(hero1, hero2,new Monster("Ghost",200,"BOO BOO","Transperent", new Weapon(4,4,"Memory Loss"," Mental")));
-        fightghost.StartFighting();
-        System.out.println("The final hit makes the ghost realize " + hero1.characterName + " is worthy of living and fades away from his sight. " + hero1.characterName + " returns to his body and continues forward.");
-        System.out.println("\n");
-        System.out.println("Press Enter To Continue");
-        System.console().readLine();
+        // String choiceForkInTheRoad;
+        // choiceForkInTheRoad = System.console().readLine();
 
-        System.out.println ("================================================");
-        System.out.println ("----------WINNER-WINNER-CHICKEN-DINNER----------");
-        System.out.println ("================================================");                
+        // switch (choiceForkInTheRoad)
+        // {
+        // case "1":
+        //     System.out.println(hero1.characterName + " stumbled against a zombie.");
+        //     break;
+        // case "2":
+        //     System.out.println(hero1.characterName + " got wrecked by numerous forces.");
+        //     System.exit(0x0);
+        //     break;
+        // }
+        //Encounter fightzombie = new Encounter(hero1, hero2, new Monster("Zombie", 100,"rauggghh", "grey", new Weapon( 3,3, "Bite","physical"))); 
+        //fightzombie.StartFighting();
+
+        //System.out.println("After killing the zombie, He rushes through the endless forces of the undead. \nTired and fatigued, he decides to take a nap in a coffin which is out of sight of the undead. \nHe closes his eyes seeing the sunset. \nHe’s disturbed by the sound of chattering teeth. \nHe sits up and looks through the empty eye sockets of a human, a skeleton.");
+        //Encounter fightskeleton = new Encounter(hero1, hero2, new Monster( "Skeleton",100, "crackel", "white", new Weapon(4,4, "Bone", "physical")));
+        //fightskeleton.StartFighting();
+        //System.out.println("The last hit disassembled all the joints of the skeleton. It falls apart laughing. He begins running to the exit. \n");
+        //System.out.println("\n");
+
+        String thirdSceneDes = "He runs out of the graveyard." + hero1.characterName + " stops to close his eyes and pray to the gods for their guidance. He feels a cold chill pass through his body." + hero1.characterName;
+            thirdSceneDes +=  " opens his eyes and sees his own body lying on the floor. A humanoid figure in the form of mist is trying to take his soul away from his body. " + hero1.characterName + "s determined soul chases the entity to confront the ghost.";
+            thirdSceneDes += "\n";
+        String thirdSceneChoice = ("\nThere is another fork in the road");
+        
+        List<String> thirdScenelistOfChoices = new ArrayList<String>();
+        thirdScenelistOfChoices.add("[1]Go left");
+        thirdScenelistOfChoices.add("[2]Go right");
+
+        List<String> thirdScenelistOfResponses = new ArrayList<String>();
+        thirdScenelistOfResponses.add(hero1.characterName + " A ghost has appeared");
+        thirdScenelistOfResponses.add(hero1.characterName + " A death spell has been summon upon thou");
+
+        SceneGenerator thirdScene = new SceneGenerator(thirdSceneDes, thirdSceneChoice, thirdScenelistOfChoices, thirdScenelistOfResponses, hero1);
+        thirdScene.printStoryline();
+        
+        String thirdSceneChoiceAnswer = thirdScene.makeChoice();
+
+        if (thirdSceneChoiceAnswer.equals("1")) {
+        
+            Encounter fightghost = new Encounter(hero1, hero2,new Monster("Ghost",200,"BOO BOO","Transperent", new Weapon(4,4,"Memory Loss"," Mental")));
+            fightghost.StartFighting();
+        
+            System.out.println("The final hit makes the ghost realize " + hero1.characterName + " is worthy of living and fades away from his sight. " + hero1.characterName + " returns to his body and continues forward.");
+            System.out.println("\n");
+            System.out.println("Press Enter To Continue");
+
+            System.out.println ("================================================");
+            System.out.println ("----------WINNER-WINNER-CHICKEN-DINNER----------");
+            System.out.println ("================================================");   
+        } else {
+                System.exit(0x0);
+            }
         }       
     }
 }
