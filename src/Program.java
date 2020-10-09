@@ -4,6 +4,7 @@ import gamesupport.Monster;
 import gamesupport.PartnerMenu;
 import gamesupport.SuperHero;
 import gamesupport.Weapon;
+import gamesupport.Vehic;
 
 public class Program {
 
