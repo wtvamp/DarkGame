@@ -1,6 +1,11 @@
 import java.util.ArrayList;
+import gamesupport.Encounter;
+import gamesupport.IVehicle;
+import gamesupport.Menu;
 import gamesupport.Monster;
+import gamesupport.PartnerMenu;
 import gamesupport.SuperHero;
+import gamesupport.Vehicle;
 import gamesupport.Weapon;
 import gamesupport.SceneGenerator;
 
@@ -114,6 +119,7 @@ public class Program {
         firstSceneDesc += hero1.characterName;
         firstSceneDesc += " is going to have to figure out a way of this death maze.";
 
+
         String firstSceneChoice = "As he was walking, he stumbled across a teammate that is severely injured.\nWhat should he do?\n";
         ArrayList<String> firstScenelistOfChoices = new ArrayList<>();
             firstScenelistOfChoices.add("[1]Leave him\n");
@@ -149,6 +155,12 @@ public class Program {
         secondSceneDes += hero1.characterName + " witnessed the dead become animated crawling out of their graves. \n";
         secondSceneDes += " the graveyard had become a corpse party. \nDetermined with the fierce will to live, ";
         secondSceneDes += hero1.characterName + " ready your weapon for the next encounter.\n";
+        IVehicle mysteryVehicle = new Vehicle(hero1);
+        mysteryVehicle.drive();
+        mysteryVehicle.brake();
+        mysteryVehicle.turn();
+        mysteryVehicle.honk();        
+        mysteryVehicle.crash();
 
         String secondSceneChoice = "There's a fork in the road";
         
@@ -199,7 +211,6 @@ public class Program {
         String thirdSceneChoiceAnswer = thirdScene.makeChoice();
 
         if (thirdSceneChoiceAnswer.equals("1")) {
-
             thirdScene.runEncounter();
             System.out.println("The final hit makes the ghost realize " + hero1.characterName + " ");
             System.out.println("is worthy of living and fades away from his sight. " + hero1.characterName + " ");
