@@ -135,10 +135,15 @@ public class Program {
             System.out.println("GAME OVER");
             System.exit(0);
         } else {
+            System.out.println("A Spear is thrown at him but he was able to dodge it. A Goblin has appeared\n");
             System.out.println("\n");
             System.out.println(PRESSENTER);
+            System.console().readLine();
             firstScene.runEncounter();
-            System.out.println("Now that he has defeated the Goblin, the goblin's body morphs into black dust and fades away. \nSomething has to be up with this forest. \nHe starts wandering in the forest, everything starts looking the same. \nHe powers through because he remembers that he has something to fight for. \nHe starts to see stone structures in the distance. \nHe walks towards them.");
+            System.out.println("Now that he has defeated the Goblin, the goblin's body morphs into black dust and fades away. \n");
+            System.out.println("Something has to be up with this forest. \nHe starts wandering in the forest, everything starts ");
+            System.out.println("looking the same. \nHe powers through because he remembers that he has something to fight for. \n");
+            System.out.println("He starts to see stone structures in the distance. \nHe walks towards them.");
             System.out.println("\n");
             System.out.println(PRESSENTER);
             System.console().readLine();
