@@ -50,7 +50,7 @@ public class SceneGenerator {
         switch (this.choiceAnswer)
         { 
             case "1":
-                System.out.println(this.choiceResponses.get(0));
+                System.out.println(this.choiceResponses.get(0)); //Arrays start at 0 but is equivalent to 1
                 break;
             case "2":
                 System.out.println(this.choiceResponses.get(1));
