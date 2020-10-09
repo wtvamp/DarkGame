@@ -3,8 +3,9 @@ import gamesupport.Menu;
 import gamesupport.Monster;
 import gamesupport.PartnerMenu;
 import gamesupport.SuperHero;
+import gamesupport.Vehicle;
 import gamesupport.Weapon;
-import gamesupport.Vehic;
+import gamesupport.IVehicle;
 
 public class Program {
 
@@ -88,7 +89,14 @@ public static void main(String[] args){
             System.console().readLine();
         }
 
-        System.out.println("After exiting the forest, his shoes crunched to the sound of bones and gravel.\n " + hero.characterName + " witnessed the dead become animated crawling out of their graves. \nThe graveyard had become a corpse party. \nDetermined with the fierce will to live, " + hero.characterName + " ready your weapon for the next encounter.");
+        IVehicle mysteryVehicle = new Vehicle(hero);
+        mysteryVehicle.drive();
+        mysteryVehicle.brake();
+        mysteryVehicle.turn();
+        mysteryVehicle.honk();        
+        mysteryVehicle.crash();
+        
+        System.out.println("After exiting the forest, his shoes crunched to the sound of bones and gravel.\n" + hero.characterName + " witnessed the dead become animated crawling out of their graves. \nThe graveyard had become a corpse party. \nDetermined with the fierce will to live, " + hero.characterName + " ready your weapon for the next encounter.");
         System.out.println("\n");
         System.out.println("Press Enter To Continue");
         System.console().readLine();
