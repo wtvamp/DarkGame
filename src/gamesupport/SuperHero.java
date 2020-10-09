@@ -15,8 +15,6 @@ public class SuperHero {
     public String characterName;
     
     public int damagePerTurn;
-
-	public Object NameofFriend;
     
     public SuperHero(final String heroNameFromApp, final Weapon heroWeaponFromApp, final Weapon heroWeapon2FromApp, final int heroHealthFromApp, final String characterNameFromApp, final int damagePerTurnFromApp) {
         this.HeroName = heroNameFromApp;
@@ -26,7 +24,4 @@ public class SuperHero {
         this.characterName = characterNameFromApp;
         this.damagePerTurn = damagePerTurnFromApp;
     }
-
-	public SuperHero() {
-	}
 }
