@@ -141,9 +141,9 @@ public class Program {
             System.console().readLine();
             firstScene.runEncounter();
             System.out.println("Now that he has defeated the Goblin, the goblin's body morphs into black dust and fades away. \n");
-            System.out.println("Something has to be up with this forest. \nHe starts wandering in the forest, everything starts ");
-            System.out.println("looking the same. \nHe powers through because he remembers that he has something to fight for. \n");
-            System.out.println("He starts to see stone structures in the distance. \nHe walks towards them.");
+            System.out.println("Something has to be up with this forest.  He starts wandering in the forest, everything starts \n");
+            System.out.println("looking the same.  He powers through because he remembers that he has something to fight for. \n");
+            System.out.println("He starts to see stone structures in the distance. \n\nHe walks towards them.");
             System.out.println("\n");
             System.out.println(PRESSENTER);
             System.console().readLine();
@@ -170,6 +170,7 @@ public class Program {
         SceneGenerator secondScene = new SceneGenerator(secondSceneDes, secondSceneChoice, secondScenelistOfChoices, secondScenelistOfResponses, hero1, hero2, secondSceneMonster);
         
         secondScene.printStoryline();
+
         String secondSceneChoiceAnswer = secondScene.makeChoice();
 
         if (secondSceneChoiceAnswer.equals("1")){
