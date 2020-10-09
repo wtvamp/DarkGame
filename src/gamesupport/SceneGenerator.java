@@ -13,8 +13,15 @@ public class SceneGenerator {
     private SuperHero sidekick; 
     private Monster enemy; 
 
-    public SceneGenerator(String storyLineFromApp, SuperHero heroFromApp, SuperHero sidekickFromApp, String choiceQuestionFromApp, String choiceAnswerFromApp, Monster enemyFromApp) {
-        
+    public SceneGenerator(String storyLineFromApp, String choicePromptFromApp, List<String> choiceQuestionFromApp, List<String> choiceResponsesFromApp,  SuperHero heroFromApp, SuperHero sidekickFromApp, Monster enemyFromApp) {
+        this.storyLine = storyLineFromApp;
+        this.choicePrompt = choicePromptFromApp;
+        this.choiceQuestions = choiceQuestionFromApp; 
+        this.choiceResponses = choiceResponsesFromApp;
+        this.hero = heroFromApp;
+        this.sidekick = sidekickFromApp;
+        this.enemy = enemyFromApp;
+        this.monsterEncount = new Encounter(this.hero, this.sidekick, this.enemy);
     }
 
     public SceneGenerator(String storyLineFromApp, String choicePromptFromApp, List<String> choiceQuestionFromApp, List<String> choiceResponsesFromApp, SuperHero heroFromApp) {
@@ -33,13 +40,10 @@ public class SceneGenerator {
     }
     
     public String makeChoice() {
+        System.out.println(this.choicePrompt);
         this.choiceQuestions.forEach(System.out::println);
         this.choiceAnswer = System.console().readLine();
         return this.choiceAnswer;
-    }
-    
-    public void startEncounter() {
-        
     }
 
     public void choiceResponse() {
@@ -51,8 +55,18 @@ public class SceneGenerator {
             case "2":
                 System.out.println(this.choiceResponses.get(1));
                 break;
+            default:
+                System.out.println(this.choiceResponses.get(1));
+                break;
+
         }
-    }    
+    }
+
+    public void runEncounter() {
+        if (this.monsterEncount != null) {
+            this.monsterEncount.StartFighting();
+        }
+    }
 }
 
 
