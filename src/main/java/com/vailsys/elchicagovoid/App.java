@@ -11,7 +11,8 @@ import com.vailsys.elchicagovoid.gamesupport.SuperHero;
 import com.vailsys.elchicagovoid.gamesupport.Vehicle;
 import com.vailsys.elchicagovoid.gamesupport.Weapon;
 import com.vailsys.elchicagovoid.gamesupport.SceneGenerator;
-
+//import com.vailsys.elchicagovoid.gamesupport.scenes.readFile;
+import java.util.Random;
 /**
  * Hello world!
  */
@@ -27,6 +28,8 @@ public final class App {
     public static void main(String[] args) {
         // WJT: Leave comments like this at points where you get stuck and need me to take a look
         //Begining of game - scene 1 
+
+        ArrayList<SceneGenerator> sceneList = new ArrayList<>();
         SuperHero hero;   
         SuperHero sidekick; 
         System.out.println ("========================================");
@@ -68,6 +71,8 @@ public final class App {
                 System.out.println(hero.characterName + " decided to carry the poor thing \n");
                 break;
         }
+
+        
                 //first scene
         String firstSceneDesc = hero.HeroName + " wakes up in a body bag and notices that he is in a dark forest";
         firstSceneDesc += " all he knows is that he must escape, even if it cost’s his life.\n";
@@ -87,7 +92,10 @@ public final class App {
         Monster firstSceneMonster = new Monster("Goblin", 100, "Heehee", "Green", new Weapon(3, 3, "Spear", "Physical"));
 
         SceneGenerator firstScene = new SceneGenerator(firstSceneDesc, firstSceneChoice, firstScenelistOfChoices, firstSceneListOfResponses, hero, sidekick, firstSceneMonster);
-        firstScene.printStoryline();
+        sceneList.add(firstScene);
+
+        //firstScene.printStoryline();
+        
         String firstSceneChoiceAnswer = firstScene.makeChoice(); 
         
         if (firstSceneChoiceAnswer.equals("2"))
@@ -147,8 +155,9 @@ public final class App {
         
         Monster secondSceneMonster = new Monster("Television", 100, "ZZzzzZ *Static*", "White", new Weapon(3, 3, "Electrecution", "Electric"));
         SceneGenerator secondScene = new SceneGenerator(secondSceneDes, secondSceneChoice, secondScenelistOfChoices, secondScenelistOfResponses, hero, sidekick, secondSceneMonster);
-        
-        secondScene.printStoryline();
+        sceneList.add(secondScene);
+
+        //secondScene.printStoryline();
 
         String secondSceneChoiceAnswer = secondScene.makeChoice();
 
@@ -180,7 +189,9 @@ public final class App {
 
         Monster ghost = new Monster("Ghost",200,"BOO BOO","Transperent", new Weapon(4,4,"Memory Loss"," Mental"));
         SceneGenerator thirdScene = new SceneGenerator(thirdSceneDes, thirdSceneChoice, thirdScenelistOfChoices, thirdScenelistOfResponses, hero, sidekick, ghost);
-        thirdScene.printStoryline();
+        sceneList.add(thirdScene);
+
+        //thirdScene.printStoryline();
         
         String thirdSceneChoiceAnswer = thirdScene.makeChoice();
 
@@ -197,5 +208,10 @@ public final class App {
         } else {
             System.exit(0x0);
         } 
+        int numScene = sceneList.size();
+        Random rand = new Random();
+        SceneGenerator randScene = sceneList.get(rand.nextInt(numScene));
+        randScene.printStoryline();
+
     }
 }

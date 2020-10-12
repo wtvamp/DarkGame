@@ -1,0 +1,8 @@
+Now that he has defeated the @monsterName, the @monsterName's body morphs into black dust and fades away. \n
+Something has to be up with this forest. \n
+He starts wandering in the forest, everything starts looking the same. \n
+He powers through because he remembers that he has something to fight for. \n
+--
+[1] He starts to see stone structures in the distance. \n
+--
+[1] He walks towards them

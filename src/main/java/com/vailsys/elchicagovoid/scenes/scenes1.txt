@@ -1,0 +1,11 @@
+@heroName wakes up in a body bag and notices that he is in a dark forest, all he knows is that he must escape, even if it cost’s his life. \n
+The air is full of fog and all he sees is nothing but dead animals and human body parts scattered across the branches of the trees. \n
+@heroName is going to have to figure out a way of this death maze.
+--
+As he was walking, he stumbled across a teammate that is severely injured.  What should he do?"
+--
+[1] Leave him
+[2] Carry him 
+--
+[1] @heroName left him behind\n
+[2] @heroName decided to carry the poor thing\nWhile he was carrying him,\nAn unknown spear came and wasn't able to dodge it fast enough.\n

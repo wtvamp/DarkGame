@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ReadFile",
+            "request": "launch",
+            "mainClass": "com.vailsys.elchicagovoid.scenes.ReadFile",
+            "projectName": "darkgame"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ReadFile",
+            "request": "launch",
+            "mainClass": "com.vailsys.elchicagovoid.gamesupport.ReadFile",
+            "projectName": "darkgame"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ShuffleArray",
+            "request": "launch",
+            "mainClass": "com.vailsys.elchicagovoid.gamesupport.ShuffleArray",
+            "projectName": "darkgame"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Student",
+            "request": "launch",
+            "mainClass": "com.vailsys.elchicagovoid.gamesupport.Student",
+            "projectName": "darkgame"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - WeaponTest",
+            "request": "launch",
+            "mainClass": "com.vailsys.elchicagovoid.gamesupport.WeaponTest",
+            "projectName": "darkgame"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RandomScene",
+            "request": "launch",
+            "mainClass": "com.vailsys.elchicagovoid.gamesupport.RandomScene",
+            "projectName": "darkgame"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - App",
             "request": "launch",
             "mainClass": "com.vailsys.elchicagovoid.App",
