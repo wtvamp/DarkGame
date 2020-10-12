@@ -6,9 +6,10 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Debug (Launch) - Program",
+            "name": "CodeLens (Launch) - App",
             "request": "launch",
-            "mainClass": "Program"
+            "mainClass": "com.vailsys.elchicagovoid.App",
+            "projectName": "darkgame"
         },
         {
             "type": "java",
@@ -16,6 +17,12 @@
             "request": "launch",
             "mainClass": "${file}"
         },
-
+        {
+            "type": "java",
+            "name": "Debug (Launch)-App<DarkGame_4c8ab2e0>",
+            "request": "launch",
+            "mainClass": "com.vailsys.elchicagovoid.App",
+            "projectName": "darkgame"
+        }
     ]
 }
