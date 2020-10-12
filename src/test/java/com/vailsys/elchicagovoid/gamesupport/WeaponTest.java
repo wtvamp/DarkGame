@@ -1,4 +1,4 @@
-package com.vailsys.elchicagovoid;
+package com.vailsys.elchicagovoid.gamesupport;
 
 import org.junit.jupiter.api.Test;
 
@@ -7,14 +7,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import com.vailsys.elchicagovoid.gamesupport.Weapon;
 
 /**
- * Unit test for simple App.
+ * Unit test for Weapon Class.
  */
-class AppTest {
+class WeaponTest {
     /**
-     * Rigorous Test.
+     * Rigorous Test tests all properties and methods
      */
     @Test
-    void testApp() {
+    void testWeapon() {
         Weapon testCross = new Weapon(5, 5, "Cross", "Holy");
         assertEquals(5, testCross.attackCounter);
         assertEquals(5, testCross.numOfAllowedAttacks);
