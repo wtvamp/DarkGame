@@ -1,6 +1,11 @@
 import java.util.ArrayList;
+import gamesupport.Encounter;
+import gamesupport.IVehicle;
+import gamesupport.Menu;
 import gamesupport.Monster;
+import gamesupport.PartnerMenu;
 import gamesupport.SuperHero;
+import gamesupport.Vehicle;
 import gamesupport.Weapon;
 import gamesupport.SceneGenerator;
 
@@ -103,7 +108,6 @@ public class Program {
         //End
         if (choice.equals(choice2)) {
             System.out.println("You got your own doppleganger to kill you and replaced you");
-            System.console().readLine();
             System.exit(0);
         }
         
@@ -115,13 +119,14 @@ public class Program {
         firstSceneDesc += hero1.characterName;
         firstSceneDesc += " is going to have to figure out a way of this death maze.";
 
+
         String firstSceneChoice = "As he was walking, he stumbled across a teammate that is severely injured.\nWhat should he do?\n";
         ArrayList<String> firstScenelistOfChoices = new ArrayList<>();
-        firstScenelistOfChoices.add("[1]Leave him\n");
-        firstScenelistOfChoices.add("[2]Carry him\n");
+            firstScenelistOfChoices.add("[1]Leave him\n");
+            firstScenelistOfChoices.add("[2]Carry him\n");
         ArrayList<String> firstSceneListOfResponses = new ArrayList<>();
-        firstSceneListOfResponses.add(hero1.characterName + " left him behind \n");
-        firstSceneListOfResponses.add(hero1.characterName + " decided to carry the poor thing \n");
+            firstSceneListOfResponses.add(hero1.characterName + " left him behind \n");
+            firstSceneListOfResponses.add(hero1.characterName + " decided to carry the poor thing \n");
         Monster firstSceneMonster = new Monster("Goblin", 100, "Heehee", "Green", new Weapon(3, 3, "Spear", "Physical"));
 
         SceneGenerator firstScene = new SceneGenerator(firstSceneDesc, firstSceneChoice, firstScenelistOfChoices, firstSceneListOfResponses, hero1, hero2, firstSceneMonster);
@@ -155,16 +160,22 @@ public class Program {
         secondSceneDes += hero1.characterName + " witnessed the dead become animated crawling out of their graves. \n";
         secondSceneDes += " the graveyard had become a corpse party. \nDetermined with the fierce will to live, ";
         secondSceneDes += hero1.characterName + " ready your weapon for the next encounter.\n";
+        IVehicle mysteryVehicle = new Vehicle(hero1);
+        mysteryVehicle.drive();
+        mysteryVehicle.brake();
+        mysteryVehicle.turn();
+        mysteryVehicle.honk();        
+        mysteryVehicle.crash();
 
         String secondSceneChoice = "There's a fork in the road";
         
         ArrayList<String> secondScenelistOfChoices = new ArrayList<>();
-        secondScenelistOfChoices.add("[1]Go left");
-        secondScenelistOfChoices.add("[2]Go right");
+            secondScenelistOfChoices.add("[1]Go left");
+            secondScenelistOfChoices.add("[2]Go right");
         
         ArrayList<String> secondScenelistOfResponses = new ArrayList<>();
-        secondScenelistOfResponses.add(hero1.characterName + " has found a mysterious Television floating");
-        secondScenelistOfResponses.add(hero1.characterName + " gets bitten by a Zombie");
+            secondScenelistOfResponses.add(hero1.characterName + " has found a mysterious Television floating");
+            secondScenelistOfResponses.add(hero1.characterName + " gets bitten by a Zombie");
         
         Monster secondSceneMonster = new Monster("Television", 100, "ZZzzzZ *Static*", "White", new Weapon(3, 3, "Electrecution", "Electric"));
         SceneGenerator secondScene = new SceneGenerator(secondSceneDes, secondSceneChoice, secondScenelistOfChoices, secondScenelistOfResponses, hero1, hero2, secondSceneMonster);
@@ -179,7 +190,7 @@ public class Program {
         } else {
             System.out.println("GAMEOVER you died to dysentry");
         }
-        //Second Start
+        //Second End
 
         //Third Start
         String thirdSceneDes = "He runs out of the graveyard." + hero1.characterName;
@@ -192,12 +203,12 @@ public class Program {
 
         String thirdSceneChoice = ("\nThere is another fork in the road");        
         ArrayList<String> thirdScenelistOfChoices = new ArrayList<>();
-        thirdScenelistOfChoices.add("[1]Go left");
-        thirdScenelistOfChoices.add("[2]Go right");
+            thirdScenelistOfChoices.add("[1]Go left");
+            thirdScenelistOfChoices.add("[2]Go right");
 
         ArrayList<String> thirdScenelistOfResponses = new ArrayList<>();
-        thirdScenelistOfResponses.add(hero1.characterName + "A ghost has appeared");
-        thirdScenelistOfResponses.add(hero1.characterName + "A death spell has been summon upon thou");
+            thirdScenelistOfResponses.add(hero1.characterName + "A ghost has appeared");
+            thirdScenelistOfResponses.add(hero1.characterName + "A death spell has been summon upon thou");
 
         Monster ghost = new Monster("Ghost",200,"BOO BOO","Transperent", new Weapon(4,4,"Memory Loss"," Mental"));
         SceneGenerator thirdScene = new SceneGenerator(thirdSceneDes, thirdSceneChoice, thirdScenelistOfChoices, thirdScenelistOfResponses, hero1, hero2, ghost);
@@ -206,7 +217,6 @@ public class Program {
         String thirdSceneChoiceAnswer = thirdScene.makeChoice();
 
         if (thirdSceneChoiceAnswer.equals("1")) {
-
             thirdScene.runEncounter();
             System.out.println("The final hit makes the ghost realize " + hero1.characterName + " ");
             System.out.println("is worthy of living and fades away from his sight. " + hero1.characterName + " ");
@@ -219,6 +229,6 @@ public class Program {
             System.out.println ("================================================");   
         } else {
             System.exit(0x0);
-        }     
+        } 
     }
 }
