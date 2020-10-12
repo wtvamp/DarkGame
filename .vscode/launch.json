@@ -6,38 +6,10 @@
     "configurations": [
         {
             "type": "java",
-            "name": "CodeLens (Launch) - Program",
-            "request": "launch",
-            "mainClass": "Program",
-            "projectName": "DarkGame_4c8ab2e0"
-        },
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - Program",
-            "request": "launch",
-            "mainClass": "gamesupport.Program",
-            "projectName": "DarkGame-1_24c93f82"
-        },
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - GenerateRandom",
-            "request": "launch",
-            "mainClass": "gamesupport.GenerateRandom",
-            "projectName": "DarkGame_8189cdcf"
-        },
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - Program",
-            "request": "launch",
-            "mainClass": "gamesupport.Program",
-            "projectName": "DarkGame_8189cdcf"
-        },
-        {
-            "type": "java",
             "name": "CodeLens (Launch) - App",
             "request": "launch",
-            "mainClass": "App",
-            "projectName": "DarkGame_8189cdcf"
+            "mainClass": "com.vailsys.elchicagovoid.App",
+            "projectName": "darkgame"
         },
         {
             "type": "java",
@@ -49,8 +21,8 @@
             "type": "java",
             "name": "Debug (Launch)-App<DarkGame_4c8ab2e0>",
             "request": "launch",
-            "mainClass": "App",
-            "projectName": "DarkGame_4c8ab2e0"
+            "mainClass": "com.vailsys.elchicagovoid.App",
+            "projectName": "darkgame"
         }
     ]
 }
