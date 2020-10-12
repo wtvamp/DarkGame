@@ -1,4 +1,4 @@
-package gamesupport;
+package com.vailsys.elchicagovoid.gamesupport;
 
 public interface IVehicle {
     public void drive();

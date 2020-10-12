@@ -1,4 +1,4 @@
-package gamesupport;
+package com.vailsys.elchicagovoid.gamesupport;
 import java.util.Random;
  public class GenerateRandom {
     public static void main( String args[] ) {

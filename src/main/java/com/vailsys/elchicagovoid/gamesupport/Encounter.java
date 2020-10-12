@@ -1,11 +1,7 @@
-package gamesupport;
-//import java.util.Scanner;
-//import java.io.*;
-//import java.util.Random;
+package com.vailsys.elchicagovoid.gamesupport;
 
 public class Encounter {
 
-    //String enterPrompt = "Press Enter To Continue";
     int a = 1;
     private SuperHero herofighting2;
     private SuperHero heroFighting;
@@ -20,8 +16,6 @@ public class Encounter {
         System.out.println(monsterHeFights.WriteLnMonsterSummary());
         System.out.println(monsterHeFights.primaryWeapon.PrintWeaponStatus());
         System.out.print("Press ENTER to Continue\n");
-        //Scanner sc= new Scanner(System.in);
-        //readline headass
     }   
 
     public void StartFighting() {
@@ -30,7 +24,6 @@ public class Encounter {
         {
             System.out.println("What will he do");
             System.out.println("[1]Fight\n[2]Recover");
-            //System.console().readLine();
             
             String combatchoice;
             combatchoice = System.console().readLine();
@@ -45,8 +38,6 @@ public class Encounter {
                 case "2":
                     System.out.println("Gotta keep defending myself.");
                     break;
-                // case "3":
-                // System.out.println("Partner Switched to " + hero2.);
             }
 
             if (combatchoice.equals("1"))

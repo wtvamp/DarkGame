@@ -1,85 +1,95 @@
-import gamesupport.Encounter;
-import gamesupport.Menu;
-import gamesupport.Monster;
-import gamesupport.PartnerMenu;
-import gamesupport.SuperHero;
-import gamesupport.Vehicle;
-import gamesupport.Weapon;
-import gamesupport.IVehicle;
+package com.vailsys.elchicagovoid;
 
-public class Program {
+import com.vailsys.elchicagovoid.gamesupport.Encounter;
+import com.vailsys.elchicagovoid.gamesupport.IVehicle;
+import com.vailsys.elchicagovoid.gamesupport.Menu;
+import com.vailsys.elchicagovoid.gamesupport.Monster;
+import com.vailsys.elchicagovoid.gamesupport.PartnerMenu;
+import com.vailsys.elchicagovoid.gamesupport.SuperHero;
+import com.vailsys.elchicagovoid.gamesupport.Vehicle;
+import com.vailsys.elchicagovoid.gamesupport.Weapon;
 
-public static void main(String[] args){
-{
-    // WJT: Leave comments like this at points where you get stuck and need me to take a look
-    //Begining of game - scene 1 
-    SuperHero hero;   
-    SuperHero sidekick; 
-
-    System.out.println ("========================================");
-    System.out.println ("----------A-WORLD-OF-FATE----------");
-    System.out.println ("========================================");
-    
-    System.out.println("Welcome to your demise! >:D");
-    System.out.println("Try to survive as long as you can you wretched humans!");
-    System.out.println("Press Enter to Continue!");
-    System.console().readLine();    
-       
-    Menu heroChoice = new Menu();
-    PartnerMenu partnerChoice = new PartnerMenu();
-
-    System.out.println("Please choose your character to start:");
-    heroChoice.printMenu();
-    hero = heroChoice.chooseHero();
-
-    System.out.println("Please choose a sidekick to accompany you on this journey:");
-    partnerChoice.printMenu();
-    sidekick = partnerChoice.chooseHero();
-
-    if(hero.equals(sidekick)){
-        System.out.println("You got your own doppleganger to kill you and replaced you");
-        System.console().readLine();
-        System.exit(0);
+/**
+ * Hello world!
+ */
+public final class App {
+    private App() {
     }
-    //if statement
-    System.out.println(hero.characterName + " wakes up in a body bag and notices that he is in a dark forest, all he knows is that he must escape, even if it cost’s his life.\nThe air is full of fog and all he sees is nothing but dead animals and human body parts scattered across the branches of the trees. \n" + hero.characterName + " is going to have to figure out a way of this death maze.");
-    System.out.println("\n");
-    System.out.println("Press ENTER to continue \n");
 
-    System.out.println("As he was walking, he stumbled across a teammate that is severely injured.");
-    System.out.println("What should he do? \n");
-    System.out.println("[1]Leave him");
-    System.out.println("[2]Carry him");
-    
-    String choiceTeamMate;
+    /**
+     * Says hello to the world.
+     * @param args The arguments of the program.
+     */
+    public static void main(String[] args) {
+        // WJT: Leave comments like this at points where you get stuck and need me to take a look
+        //Begining of game - scene 1 
+        SuperHero hero;   
+        SuperHero sidekick; 
 
-    choiceTeamMate = System.console().readLine();
-     
-    switch (choiceTeamMate)
-    { 
-        case "1":
-            System.out.println(hero.characterName + " left him behind \n");
-            break;
-        case "2":
-            System.out.println(hero.characterName + " decided to carry the poor thing \n");
-            break;
-    }
-     
-    if (choiceTeamMate.equals("2"))
-    {
-        System.out.println("While he was carrying him,\nAn unknown spear came and wasn't able to dodge it fast enough");
-        System.out.println("GAME OVER");
-        System.exit(0);
+        System.out.println ("========================================");
+        System.out.println ("----------A-WORLD-OF-FATE----------");
+        System.out.println ("========================================");
+        
+        System.out.println("Welcome to your demise! >:D");
+        System.out.println("Try to survive as long as you can you wretched humans!");
+        System.out.println("Press Enter to Continue!");
+        System.console().readLine();    
+        
+        Menu heroChoice = new Menu();
+        PartnerMenu partnerChoice = new PartnerMenu();
 
-    } else {
+        System.out.println("Please choose your character to start:");
+        heroChoice.printMenu();
+        hero = heroChoice.chooseHero();
+
+        System.out.println("Please choose a sidekick to accompany you on this journey:");
+        partnerChoice.printMenu();
+        sidekick = partnerChoice.chooseHero();
+
+        if(hero.equals(sidekick)){
+            System.out.println("You got your own doppleganger to kill you and replaced you");
+            System.console().readLine();
+            System.exit(0);
+        }
+        //if statement
+        System.out.println(hero.characterName + " wakes up in a body bag and notices that he is in a dark forest, all he knows is that he must escape, even if it cost’s his life.\nThe air is full of fog and all he sees is nothing but dead animals and human body parts scattered across the branches of the trees. \n" + hero.characterName + " is going to have to figure out a way of this death maze.");
         System.out.println("\n");
-        System.out.println("Press Enter To Continue");
+        System.out.println("Press ENTER to continue \n");
 
-        System.console().readLine();
-    }
-    
-    if (choiceTeamMate.equals("1"))
-    {
+        System.out.println("As he was walking, he stumbled across a teammate that is severely injured.");
+        System.out.println("What should he do? \n");
+        System.out.println("[1]Leave him");
+        System.out.println("[2]Carry him");
+        
+        String choiceTeamMate;
+
+        choiceTeamMate = System.console().readLine();
+        
+        switch (choiceTeamMate)
+        { 
+            case "1":
+                System.out.println(hero.characterName + " left him behind \n");
+                break;
+            case "2":
+                System.out.println(hero.characterName + " decided to carry the poor thing \n");
+                break;
+        }
+        
+        if (choiceTeamMate.equals("2"))
+        {
+            System.out.println("While he was carrying him,\nAn unknown spear came and wasn't able to dodge it fast enough");
+            System.out.println("GAME OVER");
+            System.exit(0);
+
+        } else {
+            System.out.println("\n");
+            System.out.println("Press Enter To Continue");
+
+            System.console().readLine();
+        }
+        
+        if (choiceTeamMate.equals("1"))
+        {
             Encounter fightGoblinOneAtAtime = new Encounter(hero, sidekick, new Monster("Goblin", 100, "Heehee", "Green", new Weapon(3, 3, "Spear", "Physical")));
             fightGoblinOneAtAtime.StartFighting();
             
@@ -118,7 +128,7 @@ public static void main(String[] args){
             System.out.println(hero.characterName + " gets bitten by a Zombie");
             break;
         }
-                   
+                    
         if (choiceForkInTheRoad2.equals("1")){
             System.out.println(hero.characterName + " needs to rest so " + sidekick.characterName + " has to step in");
             choiceForkInTheRoad2 = System.console().readLine();
@@ -170,7 +180,6 @@ public static void main(String[] args){
 
         System.out.println ("================================================");
         System.out.println ("----------WINNER-WINNER-CHICKEN-DINNER----------");
-        System.out.println ("================================================");                
-        }       
+        System.out.println ("================================================");
     }
 }
