@@ -40,7 +40,7 @@ public final class App {
         System.out.println("Try to survive as long as you can you wretched humans!");
         System.out.println("Press Enter to Continue!");
         System.console().readLine();    
-        
+       
         Menu heroChoice = new Menu();
         PartnerMenu partnerChoice = new PartnerMenu();
 
@@ -72,8 +72,11 @@ public final class App {
                 break;
         }
 
-        
-                //first scene
+         //Scene 1 pt 1
+
+
+        //end
+        //first scene
         String firstSceneDesc = hero.HeroName + " wakes up in a body bag and notices that he is in a dark forest";
         firstSceneDesc += " all he knows is that he must escape, even if it cost’s his life.\n";
         firstSceneDesc += " The air is full of fog and all he sees is nothing but dead animals and ";

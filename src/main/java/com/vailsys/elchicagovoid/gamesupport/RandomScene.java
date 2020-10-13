@@ -18,7 +18,7 @@ public static void main(String args[]) {
             array[i] = temp;
             
             if (i == 0){
-                System.out.println("pp");
+                System.out.println("bruh");
             }
             
             }

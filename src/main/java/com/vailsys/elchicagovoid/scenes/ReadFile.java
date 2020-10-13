@@ -7,11 +7,12 @@ import java.util.Scanner; // Import the Scanner class to read text files
 public class ReadFile {
   public static void main(String[] args) {
     try {
-      File myObj = new File("/Users/mmadrigal/DarkGame/src/main/java/com/vailsys/elchicagovoid/scenes/scene2.txt");
+      File myObj = new File("src/main/java/com/vailsys/elchicagovoid/scenes/scenes1.txt");
       Scanner myReader = new Scanner(myObj);
       while (myReader.hasNextLine()) {
         String data = myReader.nextLine();
         System.out.println(data);
+
       }
       myReader.close();
     } catch (FileNotFoundException e) {
