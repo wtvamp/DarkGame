@@ -3,7 +3,7 @@ package com.vailsys.elchicagovoid.gamesupport;
 public class Weapon {
     
 
-public int numOfAllowedAttacks;
+    public int numOfAllowedAttacks;
     public int attackCounter;
     public String weaponName;
     public String attackType;
