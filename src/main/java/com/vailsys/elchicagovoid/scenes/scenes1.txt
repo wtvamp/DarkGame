@@ -9,3 +9,4 @@ As he was walking, he stumbled across a teammate that is severely injured.  What
 --
 [1] @heroName left him behind\n
 [2] @heroName decided to carry the poor thing\nWhile he was carrying him,\nAn unknown spear came and wasn't able to dodge it fast enough.\n
+----

@@ -11,8 +11,7 @@ public class ReadFileTest {
     @Test
     void testLoadFile() {
         ReadFile readFile = new ReadFile();
-        readFile.LoadFileFromText();
+        readFile.loadFileFromText();
         assertEquals(1, 1);
-    }
-    
+    }   
 }

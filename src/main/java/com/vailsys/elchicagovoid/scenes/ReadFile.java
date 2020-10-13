@@ -1,18 +1,49 @@
 
 package com.vailsys.elchicagovoid.scenes;
-import java.io.File;  // Import the File class
-import java.io.FileNotFoundException;  // Import this class to handle errors
-import java.util.Scanner; // Import the Scanner class to read text files
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ReadFile {
 
-  public void LoadFileFromText() {
+  public void loadFileFromText() {
     try {
         File myObj = new File("src/main/java/com/vailsys/elchicagovoid/scenes/scenes1.txt");
         Scanner myReader = new Scanner(myObj);
         while (myReader.hasNextLine()) {
-            String data = myReader.nextLine();
-            System.out.println(data);
+            String dataFromSceneText = myReader.nextLine();            
+            String textDescription = "";
+            String choicePrompt = "";
+            ArrayList<String> choices = new ArrayList<String>();
+            ArrayList<String> responses = new ArrayList<String>();
+
+            while (!dataFromSceneText.equals("--")) {
+                textDescription += dataFromSceneText;
+                dataFromSceneText = myReader.nextLine();
+            }
+
+            dataFromSceneText = myReader.nextLine();
+
+            while (!dataFromSceneText.equals("--")) {
+                choicePrompt += dataFromSceneText;
+                dataFromSceneText = myReader.nextLine();
+            }
+
+            dataFromSceneText = myReader.nextLine();
+
+            while (!dataFromSceneText.equals("--")) {
+                choices.add(dataFromSceneText);
+                dataFromSceneText = myReader.nextLine();
+            }
+            
+            dataFromSceneText = myReader.nextLine();
+            
+            while (!dataFromSceneText.equals("--") && myReader.hasNextLine()) {
+                responses.add(dataFromSceneText);
+                dataFromSceneText = myReader.nextLine();
+            }
         }
         myReader.close();
         } catch (FileNotFoundException e) {
