@@ -11,5 +11,6 @@ public class ReadFileTest {
         ReadFile readFile = new ReadFile();
         readFile.loadFileFromText();
         assertEquals(1, 1);
-    }   
+    }
 }
+

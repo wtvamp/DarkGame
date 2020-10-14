@@ -7,8 +7,8 @@ As he was walking, he stumbled across a teammate that is severely injured.  What
 [1] Leave him
 [2] Carry him 
 --
-[1] While he was carrying him,\nAn unknown spear came and wasn't able to dodge it fast enough GAMEOVER
-[2] A Spear is thrown at him but he was able to dodge it. A Goblin has appeared\n\n ENCOUNTER
+[1] A Spear is thrown at him but he was able to dodge it. A Goblin has appeared ENCOUNTER
+[2] While he was carrying him,\nAn unknown spear came and wasn't able to dodge it fast enough GAMEOVER
 --
 Now that he has defeated the Goblin, the goblin's body morphs into black dust and fades away. \n"
 Something has to be up with this forest.  He starts wandering in the forest, everything starts \n"

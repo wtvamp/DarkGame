@@ -47,25 +47,18 @@ public class SceneGenerator {
     }
 
     public void choiceResponse() {
-        switch (this.choiceAnswer)
-        { 
-            case "1":
-                System.out.println(this.choiceResponses.get(0)); //Arrays start at 0 but is equivalent to 1
-                // IF this.coihceresponse.get(0) contains the string GAMEOVER
-                // THEN exit the game
-                // IF this.choiceResponse.get(0) contains the string ENCOUNTER
-                // THEN run an encounter
-                break;
-            case "2":
-                System.out.println(this.choiceResponses.get(1));
-                break;
-            default:
-                System.out.println(this.choiceResponses.get(1));
-                break;
 
+        Integer integerChoice = Integer.parseInt(this.choiceAnswer);
+        integerChoice--;
+        
+        System.out.println(this.choiceResponses.get(integerChoice)); //Arrays start at 0 but is equivalent to 1
+        if(this.choiceResponses.get(integerChoice).contains("GAMEOVER")) {
+            System.exit(integerChoice);
+        } else if(this.choiceResponses.get(integerChoice).contains("ENCOUNTER")) {
+            monsterEncount.StartFighting();    
         }
     }
-
+    
     public void runEncounter() {
         if (this.monsterEncount != null) {
             this.monsterEncount.StartFighting();
