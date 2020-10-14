@@ -11,13 +11,15 @@ public class Encounter {
         this.heroFighting = herofightingfromapp;
         this.monsterHeFights = monsterhefightsfromapp; 
         this.herofighting2 = herofighting2fromapp;
-        
+    }   
+
+    public void monsterTaunts() {
         System.out.println("A "+ monsterHeFights.primaryWeapon.weaponName + " is thrown at him but he was able to dodge it. A " + monsterHeFights.MonsterName + " has appeared" );
         System.out.println(monsterHeFights.MonsterSpeak());
         System.out.println(monsterHeFights.WriteLnMonsterSummary());
         System.out.println(monsterHeFights.primaryWeapon.PrintWeaponStatus());
         System.out.print("Press ENTER to Continue\n");
-    }   
+    }
 
     public void StartFighting() {
         

@@ -51,6 +51,10 @@ public class SceneGenerator {
         { 
             case "1":
                 System.out.println(this.choiceResponses.get(0)); //Arrays start at 0 but is equivalent to 1
+                // IF this.coihceresponse.get(0) contains the string GAMEOVER
+                // THEN exit the game
+                // IF this.choiceResponse.get(0) contains the string ENCOUNTER
+                // THEN run an encounter
                 break;
             case "2":
                 System.out.println(this.choiceResponses.get(1));
