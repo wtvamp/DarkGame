@@ -4,30 +4,53 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.BeforeEach;
+
 
 public class MonsterTest {
 
-@Test
+    private Monster systemUnderTest;
 
-    void testMonster() {
-        Monster theBoogieMan = new Monster("Boogie Man", 100, "Bruh", "Darkness", new Weapon(10, 10, "The cheese touch", "Cheese"));
-        
-        assertEquals("Boogie Man", theBoogieMan.MonsterName);
-        assertEquals(100, theBoogieMan.NumberofHearts);
-        assertEquals("Bruh", theBoogieMan.MonsterSoundEffects);
-        assertEquals("Darkness", theBoogieMan.MonsterColor);
-        assertEquals(10, theBoogieMan.primaryWeapon.numOfAllowedAttacks);
-        assertEquals(10, theBoogieMan.primaryWeapon.attackCounter);
-        assertEquals("The cheese touch", theBoogieMan.primaryWeapon.weaponName);
-        assertEquals("Cheese", theBoogieMan.primaryWeapon.attackType);
-
-        System.out.println("You have encountered " + theBoogieMan.MonsterName + 
-        ".\n He has " + theBoogieMan.NumberofHearts + " health" + 
-        ".\n He says " + theBoogieMan.MonsterSpeak() + 
-        ".\n His color is " + theBoogieMan.MonsterColor +
-        ".\n His weapon is " + theBoogieMan.primaryWeapon.weaponName +
-        ".\n His weapon type is" + theBoogieMan.primaryWeapon.attackType + ".");
-
+    @BeforeEach
+    void assignMonster() {
+        this.systemUnderTest = new Monster("Boogie Man", 100, "Bruh", "Darkness", new Weapon(10, 10, "The cheese touch", "Cheese"));
     }
+
+    @Test
+    void testMonster() {
+        assertEquals("Boogie Man", this.systemUnderTest.MonsterName);
+        assertEquals(100, this.systemUnderTest.NumberofHearts);
+        assertEquals("Bruh", this.systemUnderTest.MonsterSoundEffects);
+        assertEquals("Darkness", this.systemUnderTest.MonsterColor);
+        assertEquals(10, this.systemUnderTest.primaryWeapon.numOfAllowedAttacks);
+        assertEquals(10, this.systemUnderTest.primaryWeapon.attackCounter);
+        assertEquals("The cheese touch", this.systemUnderTest.primaryWeapon.weaponName);
+        assertEquals("Cheese", this.systemUnderTest.primaryWeapon.attackType);
+
+        System.out.println("You have encountered " + this.systemUnderTest.MonsterName + 
+        ".\n He has " + this.systemUnderTest.NumberofHearts + " health" + 
+        ".\n He says " + this.systemUnderTest.MonsterSpeak() + 
+        ".\n His color is " + this.systemUnderTest.MonsterColor +
+        ".\n His weapon is " + this.systemUnderTest.primaryWeapon.weaponName +
+        ".\n His weapon type is" + this.systemUnderTest.primaryWeapon.attackType + ".");
+    }
+
+    @Test
+    void testMonsterSpeak() {
+        assertEquals("The monster says Bruh", this.systemUnderTest.MonsterSpeak());        
+        this.systemUnderTest.MonsterIsAlive = false;
+        assertEquals("The monster doesn't say anything 'cause it's dead", this.systemUnderTest.MonsterSpeak());        
+    }
+
+    @Test 
+    void testMonsterSummary() {
+        assertEquals("The monster's name is Boogie Man and his health is 100", this.systemUnderTest.WriteLnMonsterSummary());
+    }
+
+    @Test
+    void testMonsterHealth() {
+        assertEquals(100, this.systemUnderTest.MonsterHealth);
+    }
+
 }
 

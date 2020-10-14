@@ -26,10 +26,7 @@ public class Monster {
             MonstersCreated++; 
             MonstersAlive++; 
         } 
-        // public void KillMonster() { 
-        //     this.MonsterIsAlive = false; 
-        //     this.MonsterHealth = 0; 
-        // } 
+
         public String MonsterSpeak() { 
             if (this.MonsterIsAlive) { 
                 return "The monster says " + this.MonsterSoundEffects;
