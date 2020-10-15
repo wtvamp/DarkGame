@@ -2,9 +2,12 @@ package com.vailsys.elchicagovoid.gamesupport;
 
 import java.util.Random;
 
+import com.vailsys.elchicagovoid.gamesupport.interfaces.IDamageEnemy;
+import com.vailsys.elchicagovoid.gamesupport.interfaces.IRestoreSpell;
+import com.vailsys.elchicagovoid.gamesupport.interfaces.ISpell;
+
 public class Encounter {
 
-    int a = 1;
     private SuperHero herofighting2;
     private SuperHero heroFighting;
     private Monster monsterHeFights;
@@ -57,7 +60,7 @@ public class Encounter {
             System.out.println("===================================================");
             System.out.println("\n");
             System.out.println("What will he do");
-            System.out.println(" [1]Fight\n [2]Recover");
+            System.out.println(" [1]Fight\n [2]Recover\n [3]Cast Spell");
             
             String combatchoice = System.console().readLine();
 
@@ -120,6 +123,34 @@ public class Encounter {
                 System.out.println(heroFighting.characterName + " has blocked all attacks, received 25 health, and another " + heroFighting.HeroWeapon.weaponName);
                 System.out.println("Press ENTER to Continue");
                 System.console().readLine();
+            }
+
+            if (combatchoice.equals("3") && heroFighting.Health > 0) {
+                int spellIndex = 0;
+                for (ISpell spell : heroFighting.getHeroSpellChoices()) {
+                    System.out.println("["+spellIndex+"] " + spell.getSpellName() + "\n");
+                    spellIndex++;
+                }
+                Integer choiceSpellIndex = Integer.parseInt(System.console().readLine());
+
+                ISpell chosenSpell = heroFighting.getHeroSpellChoices().get(choiceSpellIndex);
+                chosenSpell.spellWarningMessage();
+
+                System.out.println("Does the hero want to continue");
+                System.out.println("[Y]Continue\n[N]Go back");
+                String choiceSpellContinue;
+                choiceSpellContinue = System.console().readLine();
+                if (choiceSpellContinue.equals("Y") || choiceSpellContinue.equals("y")){
+                    if (chosenSpell instanceof IRestoreSpell) {
+                        ((IRestoreSpell) chosenSpell).restoreHealth(heroFighting);
+                    }
+                    if (chosenSpell instanceof IDamageEnemy) {
+                        ((IDamageEnemy) chosenSpell).damageEnemy(monsterHeFights);
+                    }
+                
+                } else{
+                    // Redo question    
+                }
             }
         }
         System.out.println("\n\n");

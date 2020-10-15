@@ -5,6 +5,10 @@ import com.vailsys.elchicagovoid.gamesupport.interfaces.IRestoreSpell;
 
 public class HealingSpell extends BaseSpell implements IRestoreSpell {
 
+    public HealingSpell(){
+        this.spellName = "Healing Spell";
+    }
+
     @Override
     public void spellIsUsedMessage() {
         System.out.println("A healing spell was cast.");
