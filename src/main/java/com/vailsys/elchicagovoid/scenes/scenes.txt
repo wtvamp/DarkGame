@@ -32,7 +32,7 @@ The structures grow larger as he gets closer, but they seem to be of no signifan
 After shifting through the last location, his shoes crunched to the sound of bones and gravel.\n
 @heroName witnesses the dead become animated crawling out of their graves. \n
 The graveyard has become a corpse party. \n
-Determined with the fierce will to live, @herName readies their weapon for the next encounter.
+Determined with the fierce will to live, @heroName readies their weapon for the next encounter.
 --
 There's a fork in the road...
 --

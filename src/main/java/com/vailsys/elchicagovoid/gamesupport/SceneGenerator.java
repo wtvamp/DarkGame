@@ -1,26 +1,10 @@
 package com.vailsys.elchicagovoid.gamesupport;
 
-import java.util.List;
-
 public class SceneGenerator extends Scene {
     private Encounter monsterEncount; 
     private SuperHero hero; 
     private SuperHero sidekick; 
-    private Monster enemy; 
     private Integer choiceAnswer;
-
-    public SceneGenerator(String storyLineFromApp, String choicePromptFromApp, List<String> choiceQuestionFromApp, List<String> choiceResponsesFromApp, String epilogue, SuperHero heroFromApp, SuperHero sidekickFromApp, Monster enemyFromApp) {
-        super(storyLineFromApp, choicePromptFromApp, choiceQuestionFromApp, choiceResponsesFromApp, epilogue);
-        this.hero = heroFromApp;
-        this.sidekick = sidekickFromApp;
-        this.enemy = enemyFromApp;
-        this.monsterEncount = new Encounter(this.hero, this.sidekick, this.enemy);
-    }
-
-    public SceneGenerator(String storyLineFromApp, String choicePromptFromApp, List<String> choiceQuestionFromApp, List<String> choiceResponsesFromApp, String epilogue, SuperHero heroFromApp) {
-        super(storyLineFromApp, choicePromptFromApp, choiceQuestionFromApp, choiceResponsesFromApp, epilogue);
-        this.hero = heroFromApp;
-    }
 
     public SceneGenerator(Scene scene, SuperHero hero, SuperHero sidekick, Monster monster) {
         super(scene.getTextDescription(), scene.getChoicePrompt(), scene.getChoices(), scene.getResponses(), scene.getEpilogue());
@@ -30,7 +14,9 @@ public class SceneGenerator extends Scene {
     }
 
     public void printStoryline() {
-        System.out.println(getTextDescription());
+        System.out.println(getTextDescription()
+            .replace("@heroName", hero.characterName + " the " + hero.HeroName)
+            .replace("@partnerName", sidekick.characterName + " the " + sidekick.HeroName));
         System.out.println("\n");
         System.out.println("Press ENTER to continue \n");
         System.console().readLine();
@@ -43,10 +29,8 @@ public class SceneGenerator extends Scene {
     }
 
     public void choiceResponse() {
-
-        this.choiceAnswer--;
-        
-        System.out.println(this.getResponses().get(this.choiceAnswer)); //Arrays start at 0 but is equivalent to 1
+        this.choiceAnswer--;        
+        System.out.println(this.getResponses().get(this.choiceAnswer));
         if(this.getResponses().get(this.choiceAnswer).contains("GAMEOVER")) {
             System.exit(this.choiceAnswer);
         } else if(this.getResponses().get(this.choiceAnswer).contains("ENCOUNTER")) {
