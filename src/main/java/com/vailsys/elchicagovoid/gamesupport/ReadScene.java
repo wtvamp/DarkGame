@@ -3,6 +3,8 @@ package com.vailsys.elchicagovoid.gamesupport;
 
 import java.util.Scanner;
 
+import com.vailsys.elchicagovoid.gamesupport.interfaces.IReadScene;
+
 public class ReadScene implements IReadScene {
     private Scene scene;
     private Scanner sceneText;

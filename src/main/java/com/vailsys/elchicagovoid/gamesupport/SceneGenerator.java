@@ -34,13 +34,13 @@ public class SceneGenerator extends Scene {
         if(this.getResponses().get(this.choiceAnswer).contains("GAMEOVER")) {
             System.exit(this.choiceAnswer);
         } else if(this.getResponses().get(this.choiceAnswer).contains("ENCOUNTER")) {
-            monsterEncount.StartFighting();    
+            monsterEncount.startFighting();    
         }
     }
     
     public void runEncounter() {
         if (this.monsterEncount != null) {
-            this.monsterEncount.StartFighting();
+            this.monsterEncount.startFighting();
         }
     }
 }

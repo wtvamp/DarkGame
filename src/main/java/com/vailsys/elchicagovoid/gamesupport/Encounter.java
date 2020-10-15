@@ -21,7 +21,7 @@ public class Encounter {
         System.out.print("Press ENTER to Continue\n");
     }
 
-    public void StartFighting() {
+    public void startFighting() {
         
         while (monsterHeFights.NumberofHearts > 0)
         {
