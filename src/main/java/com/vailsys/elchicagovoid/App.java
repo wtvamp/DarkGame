@@ -1,35 +1,33 @@
 package com.vailsys.elchicagovoid;
 
-import java.util.ArrayList;
+import java.util.Collections;
 
-import com.vailsys.elchicagovoid.gamesupport.Encounter;
-import com.vailsys.elchicagovoid.gamesupport.IVehicle;
 import com.vailsys.elchicagovoid.gamesupport.Menu;
 import com.vailsys.elchicagovoid.gamesupport.Monster;
 import com.vailsys.elchicagovoid.gamesupport.PartnerMenu;
-import com.vailsys.elchicagovoid.gamesupport.ReadFile;
-import com.vailsys.elchicagovoid.gamesupport.SuperHero;
-import com.vailsys.elchicagovoid.gamesupport.Vehicle;
-import com.vailsys.elchicagovoid.gamesupport.Weapon;
+import com.vailsys.elchicagovoid.gamesupport.RandomScenes;
+import com.vailsys.elchicagovoid.gamesupport.Scene;
 import com.vailsys.elchicagovoid.gamesupport.SceneGenerator;
-import java.util.Random;
+import com.vailsys.elchicagovoid.gamesupport.SuperHero;
+import com.vailsys.elchicagovoid.gamesupport.Weapon;
+
 /**
- * Hello world!
+ * Dark Game!
  */
 public final class App {
-    private final static String PRESSENTER = "PRESSENTER";
+    private static final String PRESS_ENTER = "Press enter to continue...";
+    private static final String FILE_LOCATION = "src/main/java/com/vailsys/elchicagovoid/scenes/scenes.txt";
+
     private App() {
     }
 
     /**
-     * Says hello to the world.
+     * Welcome to a world of fate...
      * @param args The arguments of the program.
      */
     public static void main(String[] args) {
-        // WJT: Leave comments like this at points where you get stuck and need me to take a look
-        //Begining of game - scene 1 
 
-        ArrayList<SceneGenerator> sceneList = new ArrayList<>();
+        //Begining of game - scene 1 
         SuperHero hero;   
         SuperHero sidekick; 
         System.out.println ("========================================");
@@ -38,7 +36,7 @@ public final class App {
         
         System.out.println("Welcome to your demise! >:D");
         System.out.println("Try to survive as long as you can you wretched humans!");
-        System.out.println("Press Enter to Continue!");
+        System.out.println(PRESS_ENTER);
         System.console().readLine();    
        
         Menu heroChoice = new Menu();
@@ -58,121 +56,23 @@ public final class App {
             System.exit(0);
         }
 
-         //Scene 1 pt 1
-        ReadFile readScenesFromFile = new ReadFile();
-        readScenesFromFile.loadFileFromText();
+        RandomScenes randomScenes = new RandomScenes();
 
-        Monster firstSceneMonster = new Monster("Goblin", 100, "Heehee", "Green", new Weapon(3, 3, "Spear", "Physical"));
+        randomScenes.loadScenesFromTextFile(FILE_LOCATION);
 
-        SceneGenerator firstScene = new SceneGenerator(
-            readScenesFromFile.getTextDescription(), 
-            readScenesFromFile.getChoicePrompt(), 
-            readScenesFromFile.getChoices(), 
-            readScenesFromFile.getResponses(), 
-            hero, 
-            sidekick, 
-            firstSceneMonster);
-        
-        sceneList.add(firstScene);
-        
-        firstScene.printStoryline();
+        Collections.shuffle(randomScenes.getScenes());
 
-        String firstSceneChoiceAnswer = firstScene.makeChoice(); 
+        for (Scene randomScene : randomScenes.getScenes()) {
+            SceneGenerator sceneGen = new SceneGenerator(
+                randomScene, 
+                hero, 
+                sidekick, 
+                new Monster("Goblin", 100, "Heehee", "Green", new Weapon(3, 3, "Spear", "Physical"))
+            );
 
-        firstScene.choiceResponse();
-        
-        if (firstSceneChoiceAnswer.equals("2"))
-        {
-
-            System.exit(0);
-        } else {
-            Encounter fightGoblinOneAtAtime = new Encounter(hero, sidekick, new Monster("Goblin", 100, "Heehee", "Green", new Weapon(3, 3, "Spear", "Physical")));
-            fightGoblinOneAtAtime.StartFighting();
+            sceneGen.printStoryline();
+            sceneGen.makeChoice();
+            sceneGen.choiceResponse();
         }
-        //first end
-
-        //Second Start
-        String secondSceneDes = "After exiting the forest, his shoes crunched to the sound of bones and gravel.\n "; 
-        secondSceneDes += hero.characterName + " witnessed the dead become animated crawling out of their graves. \n";
-        secondSceneDes += " the graveyard had become a corpse party. \nDetermined with the fierce will to live, ";
-        secondSceneDes += hero.characterName + " ready your weapon for the next encounter.\n";
-        IVehicle mysteryVehicle = new Vehicle(hero);
-        mysteryVehicle.drive();
-        mysteryVehicle.brake();
-        mysteryVehicle.turn();
-        mysteryVehicle.honk();        
-        mysteryVehicle.crash();
-
-        String secondSceneChoice = "There's a fork in the road";
-        
-        ArrayList<String> secondScenelistOfChoices = new ArrayList<>();
-            secondScenelistOfChoices.add("[1]Go left");
-            secondScenelistOfChoices.add("[2]Go right");
-        
-        ArrayList<String> secondScenelistOfResponses = new ArrayList<>();
-            secondScenelistOfResponses.add(hero.characterName + " has found a mysterious Television floating");
-            secondScenelistOfResponses.add(hero.characterName + " gets bitten by a Zombie");
-
-        
-        Monster secondSceneMonster = new Monster("Television", 100, "ZZzzzZ *Static*", "White", new Weapon(3, 3, "Electrecution", "Electric"));
-        SceneGenerator secondScene = new SceneGenerator(secondSceneDes, secondSceneChoice, secondScenelistOfChoices, secondScenelistOfResponses, hero, sidekick, secondSceneMonster);
-        sceneList.add(secondScene);
-
-        //secondScene.printStoryline();
-
-        String secondSceneChoiceAnswer = secondScene.makeChoice();
-
-        if (secondSceneChoiceAnswer.equals("1")){
-            System.out.println(hero.characterName + " needs to rest so " + sidekick.characterName + " has to step in");
-            secondScene.runEncounter();
-        } else {
-            System.out.println("GAMEOVER you died to dysentry");
-        }
-        //Second End
-
-        //Third Start
-        String thirdSceneDes = "He runs out of the graveyard." + hero.characterName;
-        thirdSceneDes += " stops to close his eyes and pray to the gods for their guidance. ";
-        thirdSceneDes += "He feels a cold chill pass through his body." + hero.characterName + " ";
-        thirdSceneDes += "opens his eyes and sees his own body lying on the floor. A humanoid ";
-        thirdSceneDes += "figure in the form of mist is trying to take his soul away from his body. ";
-        thirdSceneDes += hero.characterName + "s determined soul chases the entity to confront the ghost.";
-        thirdSceneDes += "\n";
-
-        String thirdSceneChoice = ("\nThere is another fork in the road");        
-        ArrayList<String> thirdScenelistOfChoices = new ArrayList<>();
-            thirdScenelistOfChoices.add("[1]Go left");
-            thirdScenelistOfChoices.add("[2]Go right");
-
-        ArrayList<String> thirdScenelistOfResponses = new ArrayList<>();
-            thirdScenelistOfResponses.add(hero.characterName + "A ghost has appeared");
-            thirdScenelistOfResponses.add(hero.characterName + "A death spell has been summon upon thou");
-
-        Monster ghost = new Monster("Ghost",200,"BOO BOO","Transperent", new Weapon(4,4,"Memory Loss"," Mental"));
-        SceneGenerator thirdScene = new SceneGenerator(thirdSceneDes, thirdSceneChoice, thirdScenelistOfChoices, thirdScenelistOfResponses, hero, sidekick, ghost);
-        sceneList.add(thirdScene);
-
-        //thirdScene.printStoryline();
-        
-        String thirdSceneChoiceAnswer = thirdScene.makeChoice();
-
-        if (thirdSceneChoiceAnswer.equals("1")) {
-            thirdScene.runEncounter();
-            System.out.println("The final hit makes the ghost realize " + hero.characterName + " ");
-            System.out.println("is worthy of living and fades away from his sight. " + hero.characterName + " ");
-            System.out.println("returns to his body and continues forward.");
-            System.out.println("\n");
-            System.out.println("Press Enter To Continue");
-            System.out.println ("================================================");
-            System.out.println ("----------WINNER-WINNER-CHICKEN-DINNER----------");
-            System.out.println ("================================================");   
-        } else {
-            System.exit(0x0);
-        } 
-        int numScene = sceneList.size();
-        Random rand = new Random();
-        SceneGenerator randScene = sceneList.get(rand.nextInt(numScene));
-        randScene.printStoryline();
-
     }
 }
