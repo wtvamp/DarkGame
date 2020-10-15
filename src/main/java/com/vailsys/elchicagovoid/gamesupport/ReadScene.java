@@ -24,6 +24,7 @@ public class ReadScene implements IReadScene {
 
         while (this.sceneText.hasNext()) {
             this.scene.setTextDescription(this.scene.getTextDescription() + this.sceneText.next());
+            this.scene.setTextDescription(this.scene.getTextDescription());
             this.scene.setChoicePrompt(this.scene.getChoicePrompt() + this.sceneText.next());
 
             Scanner scanChoices = new Scanner(this.sceneText.next());

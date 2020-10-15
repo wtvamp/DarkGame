@@ -16,7 +16,8 @@ public class SceneGenerator extends Scene {
     public void printStoryline() {
         System.out.println(getTextDescription()
             .replace("@heroName", hero.characterName + " the " + hero.HeroName)
-            .replace("@partnerName", sidekick.characterName + " the " + sidekick.HeroName));
+            .replace("@partnerName", sidekick.characterName + " the " + sidekick.HeroName)
+        );
         System.out.println("\n");
         System.out.println("Press ENTER to continue \n");
         System.console().readLine();
@@ -24,13 +25,24 @@ public class SceneGenerator extends Scene {
     
     public void makeChoice() {
         System.out.println(getChoicePrompt());
-        getChoices().forEach(System.out::println);
+        for(String choice : getChoices()) {
+            System.out.println(choice 
+                .replace("@heroName", hero.characterName + " the " + hero.HeroName)
+                .replace("@partnerName", sidekick.characterName + " the " + sidekick.HeroName)
+            );
+        }
         this.choiceAnswer = Integer.parseInt(System.console().readLine());
     }
 
     public void choiceResponse() {
         this.choiceAnswer--;        
-        System.out.println(this.getResponses().get(this.choiceAnswer));
+        // Print the response message
+        System.out.println(this.getResponses().get(this.choiceAnswer)
+            .replace("@heroName", hero.characterName + " the " + hero.HeroName)
+            .replace("@partnerName", sidekick.characterName + " the " + sidekick.HeroName)
+        );
+
+        // handle actions based on keywords in text
         if(this.getResponses().get(this.choiceAnswer).contains("GAMEOVER")) {
             System.exit(this.choiceAnswer);
         } else if(this.getResponses().get(this.choiceAnswer).contains("ENCOUNTER")) {

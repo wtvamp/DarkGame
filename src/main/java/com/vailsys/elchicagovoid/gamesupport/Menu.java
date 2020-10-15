@@ -37,7 +37,7 @@ public class Menu {
                 hero = new SuperHero("Just some guy",  new Weapon(4, 4, "Skyrim Shout", "Sore throat"), new Weapon(6, 6, "Beer", "Drunk"), 100, "Warren", 100);
                 break;        
         }
-        System.out.println("\n\nYou have selected a " + hero.HeroName + "\nThis character's name is " + hero.characterName + "\n\n");
+        System.out.println("\n\nYou have selected " + hero.characterName + " the " + hero.HeroName + "\n\n");
         return hero;
     }
 
