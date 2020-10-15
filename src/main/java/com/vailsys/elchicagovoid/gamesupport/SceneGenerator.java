@@ -24,7 +24,10 @@ public class SceneGenerator extends Scene {
     }
     
     public void makeChoice() {
-        System.out.println(getChoicePrompt());
+        System.out.println(getChoicePrompt()
+            .replace("@heroName", hero.characterName + " the " + hero.HeroName)
+            .replace("@partnerName", sidekick.characterName + " the " + sidekick.HeroName)
+        );
         for(String choice : getChoices()) {
             System.out.println(choice 
                 .replace("@heroName", hero.characterName + " the " + hero.HeroName)
