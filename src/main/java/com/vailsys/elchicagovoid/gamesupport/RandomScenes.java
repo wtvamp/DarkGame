@@ -21,6 +21,10 @@ public class RandomScenes {
         return this.fileLocation;
     }
 
+    public List<Scene> getScenes() {
+        return this.scenes;
+    }
+
     public void loadScenesFromTextFile(String fileLocation) {
         this.fileLocation = fileLocation;
         this.scenesTextFile = new File(this.fileLocation);
@@ -36,9 +40,5 @@ public class RandomScenes {
             e.printStackTrace();
         }
         this.readScenes.close();
-    }
-
-    public List<Scene> getScenes() {
-        return this.scenes;
     }
 }

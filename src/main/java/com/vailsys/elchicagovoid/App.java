@@ -1,6 +1,8 @@
 package com.vailsys.elchicagovoid;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 
 import com.vailsys.elchicagovoid.gamesupport.Menu;
 import com.vailsys.elchicagovoid.gamesupport.Monster;
@@ -56,13 +58,30 @@ public final class App {
             System.exit(0);
         }
 
+        Scene introScene = new Scene();
+        introScene.setTextDescription("Welcome to the dark forest");
+        introScene.setChoicePrompt("The trees open in front of you.");
+        ArrayList<String> introchoices = new ArrayList<>();
+        introchoices.add("Enter the forest");
+        introchoices.add("Run away screaming");
+        introScene.setChoices(introchoices);
+        ArrayList<String> introResponses = new ArrayList<>();
+        introResponses.add("The trees close behind you and you are now trapped.");
+        introResponses.add("You trip and fall and break your neck GAMEOVER.");
+        introScene.setResponses(introResponses);
+        introScene.setEpilogue("Well, now you must find your way out.");
+
+
         RandomScenes randomScenes = new RandomScenes();
-
         randomScenes.loadScenesFromTextFile(FILE_LOCATION);
-
         Collections.shuffle(randomScenes.getScenes());
 
-        for (Scene randomScene : randomScenes.getScenes()) {
+
+        RandomScenes randomScenesWithIntro = new RandomScenes();
+        randomScenesWithIntro.getScenes().add(introScene);
+        randomScenesWithIntro.getScenes().addAll(randomScenes.getScenes());
+
+        for (Scene randomScene : randomScenesWithIntro.getScenes()) {
             SceneGenerator sceneGen = new SceneGenerator(
                 randomScene, 
                 hero, 
