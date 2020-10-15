@@ -49,13 +49,14 @@ There's a fork in the road...
 Great job killing the enemy
 ----
 While walking through the forest @heroName hears a crunching of leaves behind them.
+What appears to be a large brown animatronic bear standing next to the tree is staring at you... 
 --
 Does @heroName spin around and check for an enemy?
 --
 [1] Check for an enemy?
 [2] Keep walking
 --
-[1] What appears to be a large brown animatronic bear standing next to the tree is staring at you... @heroName tries to run but the bear chomps onto his head. ENCOUNTER FREDDY
+[1] @heroName tries to run but the bear chomps onto his head. ENCOUNTER FREDDY
 [2] @heroName runs from the sound and hears it getting closer so decides to hide behind a tree.
 --
 After waiting nervously a few minutes, @heroName hears the animatronic bear turn around and walk away. 
