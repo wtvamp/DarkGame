@@ -14,7 +14,11 @@ public class Encounter {
         this.heroFighting = herofightingfromapp;
         this.monsterHeFights = monsterhefightsfromapp; 
         this.herofighting2 = herofighting2fromapp;
-    }   
+    }
+
+    public void setMonsterHeFights(Monster monsterHeFights) {
+        this.monsterHeFights = monsterHeFights;
+    }
 
     public void monsterTaunts() {
         System.out.println("A " + this.monsterHeFights.MonsterName + " appears");

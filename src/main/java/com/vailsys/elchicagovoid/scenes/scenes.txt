@@ -12,7 +12,7 @@ What should he do?
 [1] Leave him
 [2] Carry him 
 --
-[1] A Spear is thrown at him but he was able to dodge it. ENCOUNTER
+[1] A Spear is thrown at him but he was able to dodge it. ENCOUNTER GOBLIN
 [2] While he was carrying his teammate, an unknown spear came and wasn't able to dodge it fast enough GAMEOVER
 --
 Now that he has defeated the Goblin, the goblin's body morphs into black dust and fades away.
@@ -43,8 +43,8 @@ There's a fork in the road...
 [1]Go left
 [2]Go right
 --
-[1] @heroName has found a mysterious Television floating.  @heroName needs to rest so @partnerName has to step in. ENCOUNTER
-[2] @heroName gets bitten by a Zombie ENCOUNTER
+[1] @heroName has found a mysterious Television floating.  @heroName needs to rest so @partnerName has to step in. ENCOUNTER TV
+[2] @heroName gets bitten by a Zombie ENCOUNTER ZOMBIE
 --
 Great job killing the enemy
 ----
@@ -55,7 +55,7 @@ Does @heroName spin around and check for an enemy?
 [1] Check for an enemy?
 [2] Keep walking
 --
-[1] What appears to be a large brown animatronic bear standing next to the tree is staring at you... @heroName tries to run but the bear chomps onto his head. GAMEOVER
+[1] What appears to be a large brown animatronic bear standing next to the tree is staring at you... @heroName tries to run but the bear chomps onto his head. ENCOUNTER FREDDY
 [2] @heroName runs from the sound and hears it getting closer so decides to hide behind a tree.
 --
 After waiting nervously a few minutes, @heroName hears the animatronic bear turn around and walk away. 

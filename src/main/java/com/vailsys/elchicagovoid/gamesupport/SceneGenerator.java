@@ -51,16 +51,30 @@ public class SceneGenerator extends Scene {
         if(this.getResponses().get(this.choiceAnswer).contains("GAMEOVER")) {
             System.exit(this.choiceAnswer);
         } else if(this.getResponses().get(this.choiceAnswer).contains("ENCOUNTER")) {
+            if (this.getResponses().get(this.choiceAnswer).contains("GOBLIN")) {
+                monsterEncount.setMonsterHeFights(new Monster("Goblin", 100, "Heehee", "Green", new Weapon(3, 3, "Spear", "Physical")));
+            }
+            if (this.getResponses().get(this.choiceAnswer).contains("ZOMBIE")) {
+                monsterEncount.setMonsterHeFights(new Monster("Zombie", 100,"rauggghh", "Grey", new Weapon( 3,3, "Bite","Physical")));
+            }
+            if (this.getResponses().get(this.choiceAnswer).contains("TV")) {
+                monsterEncount.setMonsterHeFights(new Monster("Television", 100, "ZZzzzZ *Static*", "White", new Weapon(3, 3, "Electrecution", "Electric")));
+            }
+            if (this.getResponses().get(this.choiceAnswer).contains("SKELETON")) {
+                monsterEncount.setMonsterHeFights(new Monster( "Skeleton",100, "crackel", "White", new Weapon(4,4, "Bone", "Physical")));
+            }            
+            if (this.getResponses().get(this.choiceAnswer).contains("GHOST")) {
+                monsterEncount.setMonsterHeFights(new Monster("Ghost",200,"BOO BOO","Transperent", new Weapon(4,4,"Memory Loss","Mental")));
+            }
+            if (this.getResponses().get(this.choiceAnswer).contains("FREDDY")) {
+                monsterEncount.setMonsterHeFights(new Monster("Freddy Fazbear",200, "Welcome to Freddy Fazbear's pizza", "Brown", new Weapon(4,4,"Bite","Metal")));
+            }
+            
             monsterEncount.monsterTaunts();
             monsterEncount.startFighting();    
         }
     }
     
-    public void runEncounter() {
-        if (this.monsterEncount != null) {
-            this.monsterEncount.startFighting();
-        }
-    }
 
 	public void printEpilogue() {
         System.out.println(this.getEpilogue()
