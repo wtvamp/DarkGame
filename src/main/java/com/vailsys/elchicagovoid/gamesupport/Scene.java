@@ -25,6 +25,9 @@ public class Scene {
     }
 
     public Scene() {
+        this.textDescription = "";
+        this.choicePrompt = "";
+        this.epilogue = "";
         this.choices = new ArrayList<>();
         this.responses = new ArrayList<>();
 	}
