@@ -3,7 +3,7 @@ package com.vailsys.elchicagovoid.gamesupport;
 public class Weapon {
     
 
-public int numOfAllowedAttacks;
+    public int numOfAllowedAttacks;
     public int attackCounter;
     public String weaponName;
     public String attackType;
@@ -18,7 +18,7 @@ public int numOfAllowedAttacks;
 
     public String PrintWeaponStatus(){
     
-        return "" + weaponName + " has " + numOfAllowedAttacks + "/" + attackCounter + " remaining.\n"+
+        return "The " + weaponName + " has " + numOfAllowedAttacks + "/" + attackCounter + " remaining.\n"+
         "This " + weaponName + " is using " + attackType + " type of attack. \n";
         
          

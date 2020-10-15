@@ -1,0 +1,62 @@
+----
+@heroName wakes up in a body bag and notices that he is in a dark forest, 
+all he knows is that he must escape, even if it cost’s his life.
+The air is full of fog and all he sees is nothing but dead animals 
+and human body parts scattered across the branches of the trees.
+@heroName is going to have to figure out a way of this death maze.
+--
+As he was walking, he stumbled across a teammate that is severely injured.  
+
+What should he do?
+--
+[1] Leave him
+[2] Carry him 
+--
+[1] A Spear is thrown at him but he was able to dodge it. ENCOUNTER GOBLIN
+[2] While he was carrying his teammate, an unknown spear came and wasn't able to dodge it fast enough GAMEOVER
+--
+Now that he has defeated the Goblin, the goblin's body morphs into black dust and fades away.
+Something has to be up with this forest.  He starts wandering in the forest, everything starts
+looking the same.  He powers through because he remembers that he has something to fight for.
+He starts to see stone structures in the distance. \n\nHe walks towards them.
+----
+Now that he has defeated the last enemy, it's body morphs into black dust and fades away.
+Something has to be up with this forest.
+He starts wandering in the forest, everything starts looking the same.
+He powers through because he remembers that he has something to fight for.
+--
+He starts to see stone structures in the distance.
+--
+[1] Walk towards them...
+--
+[1] He walks towards them with a steely reserve.
+--
+The structures grow larger as he gets closer, but they seem to be of no signifance as he passed by them.
+----
+After shifting through the last location, his shoes crunched to the sound of bones and gravel.
+@heroName witnesses the dead become animated crawling out of their graves.
+The graveyard has become a corpse party.
+Determined with the fierce will to live, @heroName readies their weapon for the next encounter.
+--
+There's a fork in the road...
+--
+[1]Go left
+[2]Go right
+--
+[1] @heroName has found a mysterious Television floating.  @heroName needs to rest so @partnerName has to step in. ENCOUNTER TV
+[2] @heroName gets bitten by a Zombie ENCOUNTER ZOMBIE
+--
+Great job killing the enemy
+----
+While walking through the forest @heroName hears a crunching of leaves behind them.
+--
+Does @heroName spin around and check for an enemy?
+--
+[1] Check for an enemy?
+[2] Keep walking
+--
+[1] What appears to be a large brown animatronic bear standing next to the tree is staring at you... @heroName tries to run but the bear chomps onto his head. ENCOUNTER FREDDY
+[2] @heroName runs from the sound and hears it getting closer so decides to hide behind a tree.
+--
+After waiting nervously a few minutes, @heroName hears the animatronic bear turn around and walk away. 
+Very quietly the hero moves far enough away from the bear that he can continue on his adventure.

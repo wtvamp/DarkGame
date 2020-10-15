@@ -1,40 +1,46 @@
 package com.vailsys.elchicagovoid;
 
-import com.vailsys.elchicagovoid.gamesupport.Encounter;
-import com.vailsys.elchicagovoid.gamesupport.IVehicle;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+
 import com.vailsys.elchicagovoid.gamesupport.Menu;
 import com.vailsys.elchicagovoid.gamesupport.Monster;
 import com.vailsys.elchicagovoid.gamesupport.PartnerMenu;
+import com.vailsys.elchicagovoid.gamesupport.RandomScenes;
+import com.vailsys.elchicagovoid.gamesupport.Scene;
+import com.vailsys.elchicagovoid.gamesupport.SceneGenerator;
 import com.vailsys.elchicagovoid.gamesupport.SuperHero;
-import com.vailsys.elchicagovoid.gamesupport.Vehicle;
 import com.vailsys.elchicagovoid.gamesupport.Weapon;
 
 /**
- * Hello world!
+ * Dark Game!
  */
 public final class App {
+    private static final String PRESS_ENTER = "Press enter to continue...";
+    private static final String FILE_LOCATION = "src/main/java/com/vailsys/elchicagovoid/scenes/scenes.txt";
+
     private App() {
     }
 
     /**
-     * Says hello to the world.
+     * Welcome to a world of fate...
      * @param args The arguments of the program.
      */
     public static void main(String[] args) {
-        // WJT: Leave comments like this at points where you get stuck and need me to take a look
+
         //Begining of game - scene 1 
         SuperHero hero;   
         SuperHero sidekick; 
-
         System.out.println ("========================================");
         System.out.println ("----------A-WORLD-OF-FATE----------");
         System.out.println ("========================================");
         
         System.out.println("Welcome to your demise! >:D");
         System.out.println("Try to survive as long as you can you wretched humans!");
-        System.out.println("Press Enter to Continue!");
+        System.out.println(PRESS_ENTER);
         System.console().readLine();    
-        
+       
         Menu heroChoice = new Menu();
         PartnerMenu partnerChoice = new PartnerMenu();
 
@@ -46,138 +52,54 @@ public final class App {
         partnerChoice.printMenu();
         sidekick = partnerChoice.chooseHero();
 
-        if(hero.equals(sidekick)){
-            System.out.println("You got your own doppleganger to kill you and replaced you");
+        if(hero.HeroName.equals(sidekick.HeroName)){
+            System.out.println("You got your own doppleganger to kill you and replace you");
             System.console().readLine();
             System.exit(0);
         }
-        //if statement
-        System.out.println(hero.characterName + " wakes up in a body bag and notices that he is in a dark forest, all he knows is that he must escape, even if it cost’s his life.\nThe air is full of fog and all he sees is nothing but dead animals and human body parts scattered across the branches of the trees. \n" + hero.characterName + " is going to have to figure out a way of this death maze.");
-        System.out.println("\n");
-        System.out.println("Press ENTER to continue \n");
 
-        System.out.println("As he was walking, he stumbled across a teammate that is severely injured.");
-        System.out.println("What should he do? \n");
-        System.out.println("[1]Leave him");
-        System.out.println("[2]Carry him");
-        
-        String choiceTeamMate;
+        Scene introScene = new Scene();
+        introScene.setTextDescription("Welcome to the dark forest");
+        introScene.setChoicePrompt("The trees open in front of you.");
+        ArrayList<String> introchoices = new ArrayList<>();
+        introchoices.add("Enter the forest");
+        introchoices.add("Run away screaming");
+        introScene.setChoices(introchoices);
+        ArrayList<String> introResponses = new ArrayList<>();
+        introResponses.add("The trees close behind you and you are now trapped.");
+        introResponses.add("You trip and fall and break your neck GAMEOVER.");
+        introScene.setResponses(introResponses);
+        introScene.setEpilogue("Well, now you must find your way out.");
 
-        choiceTeamMate = System.console().readLine();
-        
-        switch (choiceTeamMate)
-        { 
-            case "1":
-                System.out.println(hero.characterName + " left him behind \n");
-                break;
-            case "2":
-                System.out.println(hero.characterName + " decided to carry the poor thing \n");
-                break;
-        }
-        
-        if (choiceTeamMate.equals("2"))
-        {
-            System.out.println("While he was carrying him,\nAn unknown spear came and wasn't able to dodge it fast enough");
-            System.out.println("GAME OVER");
-            System.exit(0);
 
-        } else {
-            System.out.println("\n");
-            System.out.println("Press Enter To Continue");
+        RandomScenes randomScenes = new RandomScenes();
+        randomScenes.loadScenesFromTextFile(FILE_LOCATION);
+        Collections.shuffle(randomScenes.getScenes());
 
-            System.console().readLine();
-        }
-        
-        if (choiceTeamMate.equals("1"))
-        {
-            Encounter fightGoblinOneAtAtime = new Encounter(hero, sidekick, new Monster("Goblin", 100, "Heehee", "Green", new Weapon(3, 3, "Spear", "Physical")));
-            fightGoblinOneAtAtime.StartFighting();
-            
-            System.out.println("Now that he has defeated the Goblin, the goblin's body morphs into black dust and fades away. \nSomething has to be up with this forest. \nHe starts wandering in the forest, everything starts looking the same. \nHe powers through because he remembers that he has something to fight for. \nHe starts to see stone structures in the distance. \nHe walks towards them.");
-            System.out.println("\n");
-            System.out.println("Press Enter To Continue");
-            System.console().readLine();
+
+        RandomScenes randomScenesWithIntro = new RandomScenes();
+        randomScenesWithIntro.getScenes().add(introScene);
+        randomScenesWithIntro.getScenes().addAll(randomScenes.getScenes());
+
+        for (Scene randomScene : randomScenesWithIntro.getScenes()) {
+            SceneGenerator sceneGen = new SceneGenerator(
+                randomScene, 
+                hero, 
+                sidekick, 
+                new Monster("Goblin", 300, "Heehee", "Green", new Weapon(3, 3, "Spear", "Physical"))
+            );
+
+            sceneGen.printStoryline();
+            sceneGen.makeChoice();
+            sceneGen.choiceResponse();
+            System.out.println("\n\n");
+            sceneGen.printEpilogue();
         }
 
-        IVehicle mysteryVehicle = new Vehicle(hero);
-        mysteryVehicle.drive();
-        mysteryVehicle.brake();
-        mysteryVehicle.turn();
-        mysteryVehicle.honk();        
-        mysteryVehicle.crash();
-        
-        System.out.println("After exiting the forest, his shoes crunched to the sound of bones and gravel.\n" + hero.characterName + " witnessed the dead become animated crawling out of their graves. \nThe graveyard had become a corpse party. \nDetermined with the fierce will to live, " + hero.characterName + " ready your weapon for the next encounter.");
-        System.out.println("\n");
-        System.out.println("Press Enter To Continue");
-        System.console().readLine();
-
-        System.out.println("There's a fork in the road");
-        System.out.println("[1]Go left");
-        System.out.println("[2]Go right");
-        
-        
-        String choiceForkInTheRoad2;
-
-        choiceForkInTheRoad2 = System.console().readLine();
-        switch (choiceForkInTheRoad2)
-        { 
-        case "1":
-            System.out.println(hero.characterName + " has found a mysterious Television floating");
-            break;
-        case "2":
-            System.out.println(hero.characterName + " gets bitten by a Zombie");
-            break;
-        }
-                    
-        if (choiceForkInTheRoad2.equals("1")){
-            System.out.println(hero.characterName + " needs to rest so " + sidekick.characterName + " has to step in");
-            choiceForkInTheRoad2 = System.console().readLine();
-            Encounter fightTV = new Encounter(hero, sidekick, new Monster("Television", 100, "ZZzzzZ *Static*", "White", new Weapon(3, 3, "Electrecution", "Electric")));
-            fightTV.StartFighting();
-        }
-        
-        if (choiceForkInTheRoad2.equals("2")){
-            System.out.println("GAMEOVER you died to dysentry");
-        }
-
-        String choiceForkInTheRoad;
-        choiceForkInTheRoad = System.console().readLine();
-
-        switch (choiceForkInTheRoad)
-        {
-        case "1":
-            System.out.println(hero.characterName + " stumbled against a zombie.");
-            break;
-        case "2":
-            System.out.println(hero.characterName + " got wrecked by numerous forces.");
-            System.exit(0x0);
-            break;
-        }
-        Encounter fightzombie = new Encounter(hero, sidekick, new Monster("Zombie", 100,"rauggghh", "grey", new Weapon( 3,3, "Bite","physical"))); 
-        fightzombie.StartFighting();
-
-        System.out.println("After killing the zombie, He rushes through the endless forces of the undead. \nTired and fatigued, he decides to take a nap in a coffin which is out of sight of the undead. \nHe closes his eyes seeing the sunset. \nHe’s disturbed by the sound of chattering teeth. \nHe sits up and looks through the empty eye sockets of a human, a skeleton.");
-        Encounter fightskeleton = new Encounter(hero, sidekick, new Monster( "Skeleton",100, "crackel", "white", new Weapon(4,4, "Bone", "physical")));
-        fightskeleton.StartFighting();
-        System.out.println("The last hit disassembled all the joints of the skeleton. It falls apart laughing. He begins running to the exit. \n");
-        System.out.println("\n");
-
-        System.out.println("\nThere is another fork in the road");
-        System.out.println("[1]Go left");
-        System.out.println("[2]Go right");
-        
-        System.out.println("He runs out of the graveyard." + hero.characterName + " stops to close his eyes and pray to the gods for their guidance. He feels a cold chill pass through his body." + hero.characterName +
-        " opens his eyes and sees his own body lying on the floor. A humanoid figure in the form of mist is trying to take his soul away from his body." + hero.characterName + "s determined soul chases the entity to confront the ghost.");
-        System.out.println("\n");
-        System.out.println("Press Enter To Continue");
-        System.console().readLine();
-        Encounter fightghost = new Encounter(hero, sidekick,new Monster("Ghost",200,"BOO BOO","Transperent", new Weapon(4,4,"Memory Loss"," Mental")));
-        fightghost.StartFighting();
-        System.out.println("The final hit makes the ghost realize " + hero.characterName + " is worthy of living and fades away from his sight. " + hero.characterName + " returns to his body and continues forward.");
-        System.out.println("\n");
-        System.out.println("Press Enter To Continue");
-        System.console().readLine();
-
+        System.out.println("\n\n");
+        System.out.println(hero.characterName + " the " + hero.HeroName + " sees a clearing.  He runs towards it.\n");
+        System.out.println("He can tell that the danger is behind him and he has arrived safely at this destination.");;
+        System.out.println(hero.characterName + " the " + hero.HeroName + " successfully escapes the dark forest and lives to see another adventure.");
         System.out.println ("================================================");
         System.out.println ("----------WINNER-WINNER-CHICKEN-DINNER----------");
         System.out.println ("================================================");

@@ -1,5 +1,7 @@
 package com.vailsys.elchicagovoid.gamesupport;
 
+import com.vailsys.elchicagovoid.gamesupport.interfaces.IVehicle;
+
 public class Vehicle implements IVehicle {
     private Boolean isDriving;
     private SuperHero driver;
