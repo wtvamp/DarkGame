@@ -31,6 +31,7 @@ public class SceneGenerator extends Scene {
                 .replace("@partnerName", sidekick.characterName + " the " + sidekick.HeroName)
             );
         }
+        System.out.println("\n\n");
         this.choiceAnswer = Integer.parseInt(System.console().readLine());
     }
 
@@ -41,11 +42,13 @@ public class SceneGenerator extends Scene {
             .replace("@heroName", hero.characterName + " the " + hero.HeroName)
             .replace("@partnerName", sidekick.characterName + " the " + sidekick.HeroName)
         );
-
+        System.out.println("\n\n");
+        
         // handle actions based on keywords in text
         if(this.getResponses().get(this.choiceAnswer).contains("GAMEOVER")) {
             System.exit(this.choiceAnswer);
         } else if(this.getResponses().get(this.choiceAnswer).contains("ENCOUNTER")) {
+            monsterEncount.monsterTaunts();
             monsterEncount.startFighting();    
         }
     }
@@ -55,6 +58,16 @@ public class SceneGenerator extends Scene {
             this.monsterEncount.startFighting();
         }
     }
+
+	public void printEpilogue() {
+        System.out.println(this.getEpilogue()
+            .replace("@heroName", hero.characterName + " the " + hero.HeroName)
+            .replace("@partnerName", sidekick.characterName + " the " + sidekick.HeroName)
+        );
+        System.out.println("\n");
+        System.out.println("Press ENTER to continue \n");
+        System.console().readLine();
+	}
 }
 
 

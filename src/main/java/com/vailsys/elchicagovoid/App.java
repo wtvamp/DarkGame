@@ -50,8 +50,8 @@ public final class App {
         partnerChoice.printMenu();
         sidekick = partnerChoice.chooseHero();
 
-        if(hero.equals(sidekick)){
-            System.out.println("You got your own doppleganger to kill you and replaced you");
+        if(hero.HeroName.equals(sidekick.HeroName)){
+            System.out.println("You got your own doppleganger to kill you and replace you");
             System.console().readLine();
             System.exit(0);
         }
@@ -67,12 +67,22 @@ public final class App {
                 randomScene, 
                 hero, 
                 sidekick, 
-                new Monster("Goblin", 100, "Heehee", "Green", new Weapon(3, 3, "Spear", "Physical"))
+                new Monster("Goblin", 300, "Heehee", "Green", new Weapon(3, 3, "Spear", "Physical"))
             );
 
             sceneGen.printStoryline();
             sceneGen.makeChoice();
             sceneGen.choiceResponse();
+            System.out.println("\n\n");
+            sceneGen.printEpilogue();
         }
+
+        System.out.println("\n\n");
+        System.out.println(hero.characterName + " the " + hero.HeroName + " sees a clearing.  He runs towards it.\n");
+        System.out.println("He can tell that the danger is behind him and he has arrived safely at this destination.");;
+        System.out.println(hero.characterName + " the " + hero.HeroName + " successfully escapes the dark forest and lives to see another adventure.");
+        System.out.println ("================================================");
+        System.out.println ("----------WINNER-WINNER-CHICKEN-DINNER----------");
+        System.out.println ("================================================");
     }
 }

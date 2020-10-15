@@ -29,7 +29,7 @@ public class MonsterTest {
 
         System.out.println("You have encountered " + this.systemUnderTest.MonsterName + 
         ".\n He has " + this.systemUnderTest.NumberofHearts + " health" + 
-        ".\n He says " + this.systemUnderTest.MonsterSpeak() + 
+        ".\n He says " + this.systemUnderTest.monsterSpeak() + 
         ".\n His color is " + this.systemUnderTest.MonsterColor +
         ".\n His weapon is " + this.systemUnderTest.primaryWeapon.weaponName +
         ".\n His weapon type is" + this.systemUnderTest.primaryWeapon.attackType + ".");
@@ -37,14 +37,14 @@ public class MonsterTest {
 
     @Test
     void testMonsterSpeak() {
-        assertEquals("The monster says Bruh", this.systemUnderTest.MonsterSpeak());        
+        assertEquals("The monster says Bruh", this.systemUnderTest.monsterSpeak());        
         this.systemUnderTest.MonsterIsAlive = false;
-        assertEquals("The monster doesn't say anything 'cause it's dead", this.systemUnderTest.MonsterSpeak());        
+        assertEquals("The monster doesn't say anything 'cause it's dead", this.systemUnderTest.monsterSpeak());        
     }
 
     @Test 
     void testMonsterSummary() {
-        assertEquals("The monster's name is Boogie Man and his health is 100", this.systemUnderTest.WriteLnMonsterSummary());
+        assertEquals("The monster's name is Boogie Man and his health is 100", this.systemUnderTest.writeLnMonsterSummary());
     }
 
     @Test

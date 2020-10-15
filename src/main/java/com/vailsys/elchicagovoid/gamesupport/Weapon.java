@@ -18,7 +18,7 @@ public class Weapon {
 
     public String PrintWeaponStatus(){
     
-        return "" + weaponName + " has " + numOfAllowedAttacks + "/" + attackCounter + " remaining.\n"+
+        return "The " + weaponName + " has " + numOfAllowedAttacks + "/" + attackCounter + " remaining.\n"+
         "This " + weaponName + " is using " + attackType + " type of attack. \n";
         
          

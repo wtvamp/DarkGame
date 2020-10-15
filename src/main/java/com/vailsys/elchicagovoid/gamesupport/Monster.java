@@ -27,7 +27,7 @@ public class Monster {
             MonstersAlive++; 
         } 
 
-        public String MonsterSpeak() { 
+        public String monsterSpeak() { 
             if (this.MonsterIsAlive) { 
                 return "The monster says " + this.MonsterSoundEffects;
             } 
@@ -36,7 +36,7 @@ public class Monster {
             }
         } 
     
-        public String WriteLnMonsterSummary() {
-            return "The monster's name is " + this.MonsterName + " and his health is " + this.MonsterHealth;
+        public String writeLnMonsterSummary() {
+            return "The " + this.MonsterName + " has " + this.NumberofHearts + " hearts.";
         }
     }
