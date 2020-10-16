@@ -61,3 +61,33 @@ Does @heroName spin around and check for an enemy?
 --
 After waiting nervously a few minutes, @heroName hears the animatronic bear turn around and walk away. 
 Very quietly the hero moves far enough away from the bear that he can continue on his adventure.
+----
+Our hero is a runner. Mysteriously a race course appears.  @heroName 
+walk towards the track and two mystery shadows appear.  A shot rings
+out and the shadows sprint.  Our hero runs ahead of them.
+
+They are running a race, and our hero forgets the way. 
+@heroName take a wrong turn and get lost on the trail in a forest. It starts 
+to get darker, and the forest is looming in on them. They are determined 
+to finish the race though and wants to find a way back to the trail.
+As they run, faster and faster through the forest, @heroName notice the finish line! 
+Except, there appears to be a big, deep lake that prevents them from going 
+straight to the finish line. 
+--
+@heroName is a runner, and is nervous about their 
+ability to swim. They also know that if they 
+don't cross the lake, they will have to wait for 
+someone to come get them and they wont finish the race. 
+
+What should they do?
+--
+[1] Swim across the lake - they can do it!
+[2] The race isn't worth it. Play it safe and wait for help.
+--
+[1] @heroName starts to swim and feels their shoelace get caught on something! They start to struggle and then kick off their shoe. 
+[2] @heroName starts to swim and feels their shoelace get caught on something. They refuse to get their shoe off because they wont be able to run without their shoes! They waves their hands in the air and someone notices and comes to rescue them.  The world turns black around them.  Our was disqualified from the race - and is unsure of what penalty happens as a result. GAMEOVER
+--
+@heroName start to swim to the end and runs to the finish line. The shadows stop and bow in 
+a sign of respect.  As they do so - the race track evaporates around @heroName 
+and they once again find themselves in the middle of an empty dark forest.
+----
