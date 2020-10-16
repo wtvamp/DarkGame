@@ -2,7 +2,6 @@ package com.vailsys.elchicagovoid;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Random;
 
 import com.vailsys.elchicagovoid.gamesupport.Menu;
 import com.vailsys.elchicagovoid.gamesupport.Monster;
