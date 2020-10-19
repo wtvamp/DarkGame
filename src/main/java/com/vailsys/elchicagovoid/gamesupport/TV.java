@@ -1,4 +1,4 @@
-package com.vailsys.elchicagovoid.gamesupport;
+package com.vailsys.elchicagovoid.gamesupport; 
 
 import java.text.MessageFormat;
 
@@ -19,7 +19,10 @@ public class TV {
         System.out.println(msg);
     }
 
-    public void changeChannelUp() {
+    // public TV(Object object) {
+	// }
+
+	public void changeChannelUp() {
         if (channel == maxChannel) {
             channel = 1;
         } else {
@@ -42,12 +45,4 @@ public class TV {
         System.out.println("the TV changed the channel to " + channel);
     }
 
-    public static void main(String[] args) {
-        TV bedroomTV = new TV(60, 100);
-        System.out.println("The TV is on and set to channel " + bedroomTV.channel);
-        bedroomTV.changeChannelUp(); // change 9
-        bedroomTV.changeChannelUp(); // change 10
-        bedroomTV.changeChannelDown(); // change 9
-        bedroomTV.changeChannel(17); // change 17
-    }
 }

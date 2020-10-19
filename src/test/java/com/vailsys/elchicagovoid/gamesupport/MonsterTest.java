@@ -49,7 +49,7 @@ public class MonsterTest {
 
     @Test
     void testMonsterHealth() {
-        assertEquals(100, this.systemUnderTest.MonsterHealth);
+        assertEquals(100, this.systemUnderTest.NumberofHearts);
     }
 
 }

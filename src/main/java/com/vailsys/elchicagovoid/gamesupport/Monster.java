@@ -9,8 +9,7 @@ public class Monster {
         public int NumberofHearts; 
         public String MonsterSoundEffects; 
         // what the monster will say upon being killed 
-        public String MonsterColor; 
-        public int MonsterHealth = 100; 
+        public String MonsterColor;
         //Makes it so that Mons health will always be 100hp 
         public boolean MonsterIsAlive = true;
         //public int damageofMonster =  

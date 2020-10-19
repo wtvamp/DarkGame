@@ -1,7 +1,7 @@
 package com.vailsys.elchicagovoid.gamesupport.interfaces;
 
 public interface IVehicle {
-    public void drive();
+    public Boolean drive();
     public Boolean brake();
     public void turn();
     public void honk();

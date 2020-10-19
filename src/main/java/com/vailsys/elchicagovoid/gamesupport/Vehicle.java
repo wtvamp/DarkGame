@@ -3,17 +3,18 @@ package com.vailsys.elchicagovoid.gamesupport;
 import com.vailsys.elchicagovoid.gamesupport.interfaces.IVehicle;
 
 public class Vehicle implements IVehicle {
-    private Boolean isDriving;
-    private SuperHero driver;
+    public boolean isDriving = false;
+    public SuperHero driver;
 
     public Vehicle(SuperHero hero) {
         this.driver = hero;
         System.out.println(driver.characterName + " the " + driver.HeroName + " stumbled across a vehicle.");
     }
 
-    public void drive() {
-        System.out.println(driver.characterName + " the " + driver.HeroName + " is driving the vehicle.");
+    public Boolean drive() {
         isDriving = true;
+        System.out.println(driver.characterName + " the " + driver.HeroName + " is driving the vehicle.");
+        return isDriving;
     }
 
     public Boolean brake() {
