@@ -6,6 +6,55 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ReadFile",
+            "request": "launch",
+            "mainClass": "com.vailsys.elchicagovoid.scenes.ReadFile",
+            "projectName": "darkgame"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ReadFile",
+            "request": "launch",
+            "mainClass": "com.vailsys.elchicagovoid.gamesupport.ReadFile",
+            "projectName": "darkgame"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ShuffleArray",
+            "request": "launch",
+            "mainClass": "com.vailsys.elchicagovoid.gamesupport.ShuffleArray",
+            "projectName": "darkgame"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Student",
+            "request": "launch",
+            "mainClass": "com.vailsys.elchicagovoid.gamesupport.Student",
+            "projectName": "darkgame"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - WeaponTest",
+            "request": "launch",
+            "mainClass": "com.vailsys.elchicagovoid.gamesupport.WeaponTest",
+            "projectName": "darkgame"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RandomScene",
+            "request": "launch",
+            "mainClass": "com.vailsys.elchicagovoid.gamesupport.RandomScene",
+            "projectName": "darkgame"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - App",
+            "request": "launch",
+            "mainClass": "com.vailsys.elchicagovoid.App",
+            "projectName": "darkgame"
+        },
+        {
+            "type": "java",
             "name": "Debug (Launch) - Current File",
             "request": "launch",
             "mainClass": "${file}"
@@ -14,8 +63,8 @@
             "type": "java",
             "name": "Debug (Launch)-App<DarkGame_4c8ab2e0>",
             "request": "launch",
-            "mainClass": "App",
-            "projectName": "DarkGame_4c8ab2e0"
+            "mainClass": "com.vailsys.elchicagovoid.App",
+            "projectName": "darkgame"
         }
     ]
 }
