@@ -17,12 +17,25 @@ public class SuperHero {
     }
     private int Health;
     
-    public int getHealth(){
+    public int getHealth() {
         return Health;
     }
 
+    // monsterHeFights.setnumberOfHearts(monsterHeFights.getnumberOfHearts() - heroFighting.damagePerTurn);
+    // current health is 90
+    // addHealth = 25
+    // if( this.Health + addHealth > 100){}
+    public void addHealth(int addHealth) {
+        if(this.Health + addHealth > 100){
+            this.setHealth(100);
+        } else {
+            this.Health += addHealth;
+        }
+    }
+
+
     public void setHealth(int healthSetter){
-        this.Health= healthSetter;
+        this.Health = healthSetter;
     }
 
     private String heroName;
