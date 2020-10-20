@@ -6,9 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 
-import org.junit.jupiter.api.BeforeAll;
-
-import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 
 import java.io.ByteArrayOutputStream;
 
@@ -18,54 +16,48 @@ public class TVTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
     private TV systemUnderTest;
-    
-
-    @BeforeAll
-    public void setUpStreams() {
-        System.setOut(new PrintStream(outContent));
-    }
-
-    @AfterAll
-    public void restoreStreams() {
-        System.setOut(originalOut);
-    }
 
     @BeforeEach
     void assignTv() {
         this.systemUnderTest = new TV(10,15);
+        System.setOut(new PrintStream(outContent));
+    }
+
+    @AfterEach
+    void restoreStreams(){
+        System.setOut(originalOut);
     }
     
-    // Object[] params = new Object[]{systemUnderTest};
-    // public void set(String newName) {
-    //     this.tv = newName;
-    //   }
-
-    @Test  
+    @Test
     public void changeChannelUp() {
         this.systemUnderTest.changeChannelUp();
-        assertEquals("the TV changed the channel to 11", outContent.toString());
-
+        assertEquals("the TV changed the channel to 9", outContent.toString().trim());
     }
 
-    // @Override 
-    // public void changeChannelDown() {
-        
-    // }
+    @Test
+    public void changeChannelDown() {
+        this.systemUnderTest.changeChannelDown();
+        assertEquals("the TV changed the channel to 7", outContent.toString().trim());
+    }
 
-    // @Override
-    // public void changeChannel() {
+    @Test
+    public void changeChannel() {
+        this.systemUnderTest.changeChannel(16);
+        assertEquals("the TV changed the channel to 16", outContent.toString().trim());
+    }
 
-    // }
+    @Test
+    public void changeChannelOverMax(){
+        this.systemUnderTest.channel = 60;
+        this.systemUnderTest.changeChannelUp();
+        assertEquals("the TV changed the channel to 1", outContent.toString().trim());
+    }
 
+    @Test
+    public void changeChannelUnderMin(){
+        this.systemUnderTest.channel = 1;
+        this.systemUnderTest.changeChannelDown();
+        assertEquals("the TV changed the channel to 60", outContent.toString().trim());
+    }
     
 }
-
-// public static void main(String[] args) {
-//     TV bedroomTV = new TV(60, 100);
-//     System.out.println("The TV is on and set to channel " + bedroomTV.channel);
-//     bedroomTV.changeChannelUp(); // change 9
-//     bedroomTV.changeChannelUp(); // change 10
-//     bedroomTV.changeChannelDown(); // change 9
-//     bedroomTV.changeChannel(17); // change 17
-// }
-// }
