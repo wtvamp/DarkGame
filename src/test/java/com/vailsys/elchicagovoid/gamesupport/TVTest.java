@@ -19,17 +19,17 @@ public class TVTest {
     private final PrintStream originalOut = System.out;
     private TV systemUnderTest;
     
-
+    @Test
     @BeforeAll
     public void setUpStreams() {
         System.setOut(new PrintStream(outContent));
     }
-
+    @Test
     @AfterAll
     public void restoreStreams() {
         System.setOut(originalOut);
     }
-
+    @Test
     @BeforeEach
     void assignTv() {
         this.systemUnderTest = new TV(10,15);

@@ -26,8 +26,8 @@ public class VehicleTest  {
     @Test
     void Testdrive() {
         assertEquals(true, this.systemUnderTest.drive());
-        assertEquals("Bro", this.systemUnderTest.driver.characterName);
-       
+        assertEquals("Bro", this.systemUnderTest.driver.getCharacterName());
+   
     }
 
     // private void AssertEquals(String string, Object drive) {
@@ -35,12 +35,12 @@ public class VehicleTest  {
     @Test
     void Testbrake() {
         assertEquals(false, this.systemUnderTest.brake());
-        assertEquals("Bro", this.systemUnderTest.driver.characterName);
+        assertEquals("Bro", this.systemUnderTest.driver.getCharacterName());
     }
     @Test
     void Testturn() {
         // TODO Auto-generated method stub
-        assertEquals(this.systemUnderTest.driver.characterName + " the " + this.systemUnderTest.driver.HeroName + " did a Tokyo drift. Skeet skeet.", this.systemUnderTest.turn());
+        assertEquals(this.systemUnderTest.driver.getCharacterName() + " the " + this.systemUnderTest.getHeroName() + " did a Tokyo drift. Skeet skeet.", this.systemUnderTest.turn());
     }
 
     private void assetrEquals(String string, Object turn) {

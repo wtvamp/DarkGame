@@ -2,16 +2,24 @@ package com.vailsys.elchicagovoid.gamesupport;
 
 public class Monster {
     
-        public String MonsterName;
-        public static int MonstersCreated = 0; 
-        public static int MonstersAlive = 0; 
+        public String monsterName;
+        public static int monstersCreated = 0; 
+        public static int monstersAlive = 0; 
         
-        public int NumberofHearts; 
-        public String MonsterSoundEffects; 
+        public int numberOfHearts; 
+        private String monsterSoundEffects; 
+
+        public String getMonsterSoundEffects(){
+            return monsterSoundEffects;
+        }
+
+        public void setMonsterSoundEffects(String monsterSoundEffectSetter){
+            this.monsterSoundEffects = monsterSoundEffectSetter;
+        }
         // what the monster will say upon being killed 
-        public String MonsterColor;
+        public String monsterColor;
         //Makes it so that Mons health will always be 100hp 
-        public boolean MonsterIsAlive = true;
+        public boolean monsterIsAlive = true;
         //public int damageofMonster =  
     
         public Weapon primaryWeapon;

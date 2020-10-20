@@ -34,9 +34,9 @@ public class SuperHero {
     public void setHeroName(String nameOfHeroSetter) {
         this.heroName = nameOfHeroSetter;
     }
-    private Weapon heroWeapon;
+    public Weapon heroWeapon;
     
-    private Weapon heroWeapon2;
+    public Weapon heroWeapon2;
     
     private String characterName;
     
@@ -57,7 +57,8 @@ public class SuperHero {
         return this.heroSpellChoices;        
     }
 
-    public SuperHero(final String heroNameFromApp, final Weapon heroWeaponFromApp, final Weapon heroWeapon2FromApp, final int heroHealthFromApp, final String characterNameFromApp, final int damagePerTurnFromApp) {
+    public SuperHero(final String heroNameFromApp, final Weapon heroWeaponFromApp, 
+    final Weapon heroWeapon2FromApp, final int heroHealthFromApp, final String characterNameFromApp, final int damagePerTurnFromApp) {
         this.heroName = heroNameFromApp;
         this.heroWeapon = heroWeaponFromApp;
         this.heroWeapon2 = heroWeapon2FromApp;
