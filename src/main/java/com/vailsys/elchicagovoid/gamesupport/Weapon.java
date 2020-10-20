@@ -3,10 +3,37 @@ package com.vailsys.elchicagovoid.gamesupport;
 public class Weapon {
     
 
-    public int numOfAllowedAttacks;
-    public int attackCounter;
-    public String weaponName;
-    public String attackType;
+    private int numOfAllowedAttacks;
+    private int attackCounter;
+    private String weaponName;
+    private String attackType;
+
+
+    public int getWeaponnumOfAllowedAttacks(){
+        return this.numOfAllowedAttacks;
+    }
+
+    public void setWeaponnumOfAllowedAttacks(int numOfAttackSetter){
+        this.numOfAllowedAttacks = numOfAttackSetter;
+    }
+
+    public int getattackCounter(){
+        return this.attackCounter;
+    }
+
+    public void setattackCounter(int atkCounterSetter){
+        this.attackCounter = atkCounterSetter;
+    }
+
+    public String getweaponName(){
+        return this.weaponName;
+    }
+
+    public void setWeaponName(String wpnNameSetter){
+        this.weaponName = wpnNameSetter;
+    }
+
+
 
     public Weapon(int allowedAttacksFromApp, int attackCounterFromApp, String weaponNameFromApp, String attackTypeFromApp)
     {

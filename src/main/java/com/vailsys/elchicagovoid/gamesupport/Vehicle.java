@@ -24,8 +24,9 @@ public class Vehicle implements IVehicle {
     }
 
     @Override
-    public void turn() {
+    public String turn() {
         System.out.println(driver.characterName + " the " + driver.HeroName + " did a Tokyo drift. Skeet skeet.");
+        return turn();
     }
 
     @Override

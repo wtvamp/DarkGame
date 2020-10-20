@@ -32,20 +32,18 @@ public class VehicleTest  {
 
     // private void AssertEquals(String string, Object drive) {
     // }
-
+    @Test
     void Testbrake() {
-        assertEquals(false, this.systemUnderTest.drive());
+        assertEquals(false, this.systemUnderTest.brake());
         assertEquals("Bro", this.systemUnderTest.driver.characterName);
     }
-
+    @Test
     void Testturn() {
         // TODO Auto-generated method stub
-
+        assertEquals(this.systemUnderTest.driver.characterName + " the " + this.systemUnderTest.driver.HeroName + " did a Tokyo drift. Skeet skeet.", this.systemUnderTest.turn());
     }
 
-    void Testhonk() {
-        // TODO Auto-generated method stub
-        //System.out.println(this.systemUnderTest.honk());
+    private void assetrEquals(String string, Object turn) {
     }
 
     void Testhold(Object item) {

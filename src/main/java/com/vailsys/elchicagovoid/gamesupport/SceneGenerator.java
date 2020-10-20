@@ -15,7 +15,7 @@ public class SceneGenerator extends Scene {
 
     public void printStoryline() {
         System.out.println(getTextDescription()
-            .replace("@heroName", hero.characterName + " the " + hero.HeroName)
+            .replace("@heroName", hero.getCharacterName + " the " + hero.HeroName)
             .replace("@partnerName", sidekick.characterName + " the " + sidekick.HeroName)
         );
         System.out.println("\n");

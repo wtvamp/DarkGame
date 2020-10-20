@@ -2,13 +2,17 @@ package com.vailsys.elchicagovoid.gamesupport;
 
 import java.util.Random;
 
+import com.vailsys.elchicagovoid.gamesupport.interfaces.IDamageEnemy;
+import com.vailsys.elchicagovoid.gamesupport.interfaces.IRestoreSpell;
+import com.vailsys.elchicagovoid.gamesupport.interfaces.ISpell;
+
 public class Encounter {
 
-    int a = 1;
     private SuperHero herofighting2;
     private SuperHero heroFighting;
     private Monster monsterHeFights;
     private Random randomAttack = new Random();
+
     
     public Encounter(SuperHero herofightingfromapp, SuperHero herofighting2fromapp, Monster monsterhefightsfromapp ) { 
         this.heroFighting = herofightingfromapp;
@@ -35,21 +39,23 @@ public class Encounter {
         while (monsterHeFights.NumberofHearts > 0)
         {
             System.out.println("===================================================");
-            System.out.println("== " + this.heroFighting.characterName + " health: " + this.heroFighting.Health);
+            System.out.println("== " + this.heroFighting.getCharacterName() + " health: " + this.heroFighting.Health);
             System.out.println(
-                "== " + this.heroFighting.characterName + "'s " + 
-                this.heroFighting.HeroWeapon.weaponName + 
+                "== " + this.heroFighting.getCharacterName() + "'s " + 
+                this.heroFighting.heroWeapon.getweaponName()
+                            + 
                 " attacks remaining: " 
-                + this.heroFighting.HeroWeapon.numOfAllowedAttacks +
-                "/" + this.heroFighting.HeroWeapon.attackCounter
+                + this.heroFighting.heroWeapon.numOfAllowedAttacks +
+                "/" + this.heroFighting.heroWeapon.attackCounter
             );
-            System.out.println("== " + this.herofighting2.characterName + " health: " + this.heroFighting.Health);
+            System.out.println("== " + this.herofighting2.getCharacterName() + " health: " + this.heroFighting.Health);
             System.out.println(
-                "== " + this.herofighting2.characterName + "'s " + 
-                this.herofighting2.HeroWeapon.weaponName + 
+                "== " + this.herofighting2.getCharacterName() + "'s " + 
+                this.herofighting2.heroWeapon.getweaponName()
+                            + 
                 " attacks remaining: " 
-                + this.herofighting2.HeroWeapon.numOfAllowedAttacks +
-                "/" + this.herofighting2.HeroWeapon.attackCounter
+                + this.herofighting2.heroWeapon.numOfAllowedAttacks +
+                "/" + this.herofighting2.heroWeapon.attackCounter
             );
             
             System.out.println("===================================================");
@@ -57,22 +63,25 @@ public class Encounter {
             System.out.println("===================================================");
             System.out.println("\n");
             System.out.println("What will he do");
-            System.out.println(" [1]Fight\n [2]Recover");
+            System.out.println(" [1]Fight\n [2]Recover\n [3]Cast Spell");
             
             String combatchoice = System.console().readLine();
 
             if (combatchoice.equals("1"))
             {                
                 System.out.println("\n");
-                System.out.println("'Time to kick this guys butt!!' " + heroFighting.characterName + " the " + heroFighting.HeroName + " shouts.");
+                System.out.println("'Time to kick this guys butt!!' " + heroFighting.getCharacterName() + " the "
+                        + heroFighting.getHeroName() + " shouts.");
 
-                System.out.println(heroFighting.characterName + " used the " + heroFighting.HeroWeapon.attackType + " " + heroFighting.HeroWeapon.weaponName + ".");
+                System.out.println(heroFighting.getCharacterName() + " used the " + heroFighting.HeroWeapon.attackType
+                        + " " + heroFighting.HeroWeapon.weaponName + ".");
                 System.out.println("He did " + heroFighting.damagePerTurn + " worth of damage to the " + monsterHeFights.MonsterName);
                 monsterHeFights.NumberofHearts -= heroFighting.damagePerTurn; //reduces the amount of health the monster has
                 heroFighting.HeroWeapon.numOfAllowedAttacks--; //Decreases durability on weapon
                 System.out.println("\n");  
                 
-                System.out.println(herofighting2.characterName + " used the " + herofighting2.HeroWeapon.attackType + " " + herofighting2.HeroWeapon.weaponName + ".");
+                System.out.println(herofighting2.getCharacterName() + " used the " + herofighting2.HeroWeapon.attackType
+                        + " " + herofighting2.HeroWeapon.weaponName + ".");
                 System.out.println("He did " + herofighting2.damagePerTurn + " worth of damage to the " + monsterHeFights.MonsterName);
                 monsterHeFights.NumberofHearts -= herofighting2.damagePerTurn; //reduces the amount of health the monster has
                 heroFighting.HeroWeapon.numOfAllowedAttacks--; //Decreases durability on weapon
@@ -82,23 +91,23 @@ public class Encounter {
                     System.out.println("\n");
                     System.out.println("Press ENTER to Continue");
                     System.console().readLine();
-                    System.out.println("\n" + monsterHeFights.MonsterName + " attacks again, with the "+ monsterHeFights.primaryWeapon.weaponName);
+                    System.out.println("\n" + monsterHeFights.MonsterName + " attacks again, with the "+ monsterHeFights.primaryWeapon.getweaponName());
                     int randomAttackDmg = randomAttack.nextInt(10) + 10;
                     heroFighting.Health -= randomAttackDmg;
-                    System.out.println("Ouch, " + heroFighting.characterName + " shouts: ''AHHH!!''");
-                    System.out.println("The " + monsterHeFights.MonsterName + " attacked " + heroFighting.characterName + " for " + randomAttackDmg + " damange.");
+                    System.out.println("Ouch, " + heroFighting.getCharacterName() + " shouts: ''AHHH!!''");
+                    System.out.println("The " + monsterHeFights.MonsterName + " attacked " + heroFighting.getCharacterName() + " for " + randomAttackDmg + " damange.");
                     System.out.println("\n\n");
                 }
             } 
 
             if (heroFighting.Health < 0 || heroFighting.HeroWeapon.numOfAllowedAttacks == 0) {
                 if (this.heroFighting.Health > 0) {
-                    System.out.println(this.heroFighting.characterName + " the " + this.heroFighting.HeroName + " ran out of ammo.");
+                    System.out.println(this.heroFighting.getCharacterName() + " the " + this.heroFighting.getHeroName() + " ran out of ammo.");
                 }
                 else {
-                    System.out.println(this.heroFighting.characterName + " the " + this.heroFighting.HeroName + " ran out of health.");
+                    System.out.println(this.heroFighting.getCharacterName() + " the " + this.heroFighting.getHeroName() + " ran out of health.");
                 }
-                System.out.println("The " + monsterHeFights.MonsterName + " hits " + heroFighting.characterName + " with one final blow.");
+                System.out.println("The " + monsterHeFights.MonsterName + " hits " + heroFighting.getCharacterName() + " with one final blow.");
 
                 if (this.monsterHeFights.NumberofHearts >= 0) {
                     System.out.println("The " + monsterHeFights.MonsterName + " he was fighting is also fading.");
@@ -114,14 +123,42 @@ public class Encounter {
 
             if(combatchoice.equals("2") && heroFighting.Health < 100) { 
                 System.out.println("\n\n");
-                System.out.println(heroFighting.HeroName + " thinks to himself: 'Gotta keep defending myself.'");
+                System.out.println(heroFighting.heroName + " thinks to himself: 'Gotta keep defending myself.'");
                 heroFighting.Health += 25; 
                 heroFighting.HeroWeapon.numOfAllowedAttacks = heroFighting.HeroWeapon.attackCounter; 
                 System.out.println(heroFighting.characterName + " has blocked all attacks, received 25 health, and another " + heroFighting.HeroWeapon.weaponName);
                 System.out.println("Press ENTER to Continue");
                 System.console().readLine();
             }
-        }
+
+        //     if (combatchoice.equals("3") && heroFighting.Health > 0) {
+        //         int spellIndex = 0;
+        //         for (ISpell spell : heroFighting.getHeroSpellChoices()) {
+        //             System.out.println("["+spellIndex+"] " + spell.getSpellName() + "\n");
+        //             spellIndex++;
+        //         }
+        //         Integer choiceSpellIndex = Integer.parseInt(System.console().readLine());
+
+        //         ISpell chosenSpell = heroFighting.getHeroSpellChoices().get(choiceSpellIndex);
+        //         chosenSpell.spellWarningMessage();
+
+        //         System.out.println("Does the hero want to continue");
+        //         System.out.println("[Y]Continue\n[N]Go back");
+        //         String choiceSpellContinue;
+        //         choiceSpellContinue = System.console().readLine();
+        //         if (choiceSpellContinue.equals("Y") || choiceSpellContinue.equals("y")){
+        //             if (chosenSpell instanceof IRestoreSpell) {
+        //                 ((IRestoreSpell) chosenSpell).restoreHealth(heroFighting);
+        //             }
+        //             if (chosenSpell instanceof IDamageEnemy) {
+        //                 ((IDamageEnemy) chosenSpell).damageEnemy(monsterHeFights);
+        //             }
+                
+        //         } else{
+        //             // Redo question    
+        //         }
+        //     }
+        // }
         System.out.println("\n\n");
         System.out.println("The " + monsterHeFights.MonsterName + " has been defeated");
         System.out.println("\n");
@@ -129,6 +166,6 @@ public class Encounter {
         System.console().readLine();
         System.out.println("\n\n");
         System.out.println("\n\n");
-
+        }
     } 
 }

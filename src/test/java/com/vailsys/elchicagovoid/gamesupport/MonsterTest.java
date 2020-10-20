@@ -48,7 +48,7 @@ public class MonsterTest {
     }
 
     @Test
-    void testMonsterHealth() {
+    void testMonsterNumOfHearts() {
         assertEquals(100, this.systemUnderTest.NumberofHearts);
     }
 
