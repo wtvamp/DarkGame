@@ -86,6 +86,7 @@ public class Encounter {
                 System.out.println("He did " + herofighting2.damagePerTurn + " worth of damage to the " + monsterHeFights.getMonsterName());
                 monsterHeFights.monsterIntakeDamage(herofighting2.damagePerTurn); //reduces the amount of health the monster has
                 heroFighting.heroWeapon.numOfAllowedAttacks--; //Decreases durability on weapon
+               
                 if(monsterHeFights.getnumberOfHearts() > 0) {
                     System.out.println("\n");  
                     System.out.println("The " + monsterHeFights.getMonsterName() + " is preparing his own attack.");
