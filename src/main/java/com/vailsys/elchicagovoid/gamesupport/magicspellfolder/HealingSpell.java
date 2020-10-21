@@ -17,6 +17,6 @@ public class HealingSpell extends BaseSpell implements IRestoreSpell {
 
     @Override
     public void restoreHealth(SuperHero hero) {
-        hero.Health = hero.Health + 100;
+        hero.addHealth(100);
     }
 }

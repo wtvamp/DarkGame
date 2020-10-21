@@ -10,6 +10,6 @@ public class FireSpell extends BaseSpell implements IDamageEnemy {
     }
     @Override
     public void damageEnemy(Monster hp) {
-        hp.NumberofHearts -= 15;
+        hp.setnumberOfHearts(hp.getnumberOfHearts() - 15); 
     }
 }
