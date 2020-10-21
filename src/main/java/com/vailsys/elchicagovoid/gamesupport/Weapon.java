@@ -3,7 +3,7 @@ package com.vailsys.elchicagovoid.gamesupport;
 public class Weapon {
     
 
-    private int numOfAllowedAttacks;
+    int numOfAllowedAttacks;
     private int attackCounter;
     private String weaponName;
     private String attackType;
@@ -31,6 +31,13 @@ public class Weapon {
 
     public void setWeaponName(String wpnNameSetter){
         this.weaponName = wpnNameSetter;
+    }
+    public String getattackType(){
+        return this.weaponName;
+    }
+
+    public void setAttackType(String attackTypeSetter){
+        this.attackType = attackTypeSetter;
     }
 
 

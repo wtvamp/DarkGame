@@ -51,7 +51,7 @@ public final class App {
         partnerChoice.printMenu();
         sidekick = partnerChoice.chooseHero();
 
-        if(hero.HeroName.equals(sidekick.HeroName)){
+        if(hero.getHeroName().equals(sidekick.getHeroName())){
             System.out.println("You got your own doppleganger to kill you and replace you");
             System.console().readLine();
             System.exit(0);
@@ -96,9 +96,11 @@ public final class App {
         }
 
         System.out.println("\n\n");
-        System.out.println(hero.characterName + " the " + hero.HeroName + " sees a clearing.  He runs towards it.\n");
+        System.out.println(hero.getCharacterName() + " the " + hero.getHeroName()
+                + " sees a clearing.  He runs towards it.\n");
         System.out.println("He can tell that the danger is behind him and he has arrived safely at this destination.");;
-        System.out.println(hero.characterName + " the " + hero.HeroName + " successfully escapes the dark forest and lives to see another adventure.");
+        System.out.println(hero.getCharacterName() + " the " + hero.getHeroName()
+                + " successfully escapes the dark forest and lives to see another adventure.");
         System.out.println ("================================================");
         System.out.println ("----------WINNER-WINNER-CHICKEN-DINNER----------");
         System.out.println ("================================================");

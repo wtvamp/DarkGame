@@ -15,8 +15,8 @@ public class SceneGenerator extends Scene {
 
     public void printStoryline() {
         System.out.println(getTextDescription()
-            .replace("@heroName", hero.getCharacterName + " the " + hero.HeroName)
-            .replace("@partnerName", sidekick.characterName + " the " + sidekick.HeroName)
+            .replace("@heroName", hero.getCharacterName() + " the " + hero.getHeroName())
+            .replace("@partnerName", sidekick.getCharacterName() + " the " + sidekick.getHeroName())
         );
         System.out.println("\n");
         System.out.println("Press ENTER to continue \n");
@@ -25,13 +25,13 @@ public class SceneGenerator extends Scene {
     
     public void makeChoice() {
         System.out.println(getChoicePrompt()
-            .replace("@heroName", hero.characterName + " the " + hero.HeroName)
-            .replace("@partnerName", sidekick.characterName + " the " + sidekick.HeroName)
+            .replace("@heroName", hero.getCharacterName() + " the " + hero.getHeroName())
+            .replace("@partnerName", sidekick.getCharacterName() + " the " + sidekick.getHeroName())
         );
         for(String choice : getChoices()) {
             System.out.println(choice 
-                .replace("@heroName", hero.characterName + " the " + hero.HeroName)
-                .replace("@partnerName", sidekick.characterName + " the " + sidekick.HeroName)
+                .replace("@heroName", hero.getCharacterName() + " the " + hero.getHeroName())
+                .replace("@partnerName", sidekick.getCharacterName() + " the " + sidekick.getHeroName())
             );
         }
         System.out.println("\n\n");
@@ -42,8 +42,8 @@ public class SceneGenerator extends Scene {
         this.choiceAnswer--;        
         // Print the response message
         System.out.println(this.getResponses().get(this.choiceAnswer)
-            .replace("@heroName", hero.characterName + " the " + hero.HeroName)
-            .replace("@partnerName", sidekick.characterName + " the " + sidekick.HeroName)
+            .replace("@gHeroName()", hero.getCharacterName() + " the " + hero.getHeroName())
+            .replace("@partnerName", sidekick.getCharacterName() + " the " + sidekick.getHeroName())
         );
         System.out.println("\n\n");
         
@@ -78,8 +78,8 @@ public class SceneGenerator extends Scene {
 
 	public void printEpilogue() {
         System.out.println(this.getEpilogue()
-            .replace("@heroName", hero.characterName + " the " + hero.HeroName)
-            .replace("@partnerName", sidekick.characterName + " the " + sidekick.HeroName)
+            .replace("@heroName", hero.getCharacterName() + " the " + hero.getHeroName())
+            .replace("@partnerName", sidekick.getCharacterName() + " the " + sidekick.getHeroName())
         );
         System.out.println("\n");
         System.out.println("Press ENTER to continue \n");

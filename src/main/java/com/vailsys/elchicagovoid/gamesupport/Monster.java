@@ -2,40 +2,75 @@ package com.vailsys.elchicagovoid.gamesupport;
 
 public class Monster {
     
-        public String MonsterName;
-        public static int MonstersCreated = 0; 
-        public static int MonstersAlive = 0; 
+        private String monsterName;
+        public String getMonsterName(){
+            return monsterName;
+        }
+
+        public void setMonsterName(String monsterNameSetter){
+            this.monsterName = monsterNameSetter;
+        }
+        public static int monstersCreated = 0; 
+        public static int monstersAlive = 0; 
         
-        public int NumberofHearts; 
-        public String MonsterSoundEffects; 
+        private int numberOfHearts; 
+        public int getnumberOfHearts(){
+            return numberOfHearts;
+        }
+
+        public void monsterIntakeDamage(int damageValue) {
+            // monsterHeFights.setnumberOfHearts(monsterHeFights.getnumberOfHearts() - heroFighting.damagePerTurn);
+            this.numberOfHearts -= damageValue;
+        }
+
+        public void setnumberOfHearts(int monsternumberOfHearts){
+            this.numberOfHearts = monsternumberOfHearts;
+        }
+        private String monsterSoundEffects; 
+
+        public String getMonsterSoundEffects(){
+            return monsterSoundEffects;
+        }
+
+        public void setMonsterSoundEffects(String monsterSoundEffectSetter){
+            this.monsterSoundEffects = monsterSoundEffectSetter;
+        }
         // what the monster will say upon being killed 
-        public String MonsterColor;
+        private String monsterColor;
+
+        public String getMonsterColor(){
+            return monsterColor;
+        }
+
+        public void setMonsterColor(String monsterCOlorSetter){
+            this.monsterColor = monsterCOlorSetter;
+        }
+
         //Makes it so that Mons health will always be 100hp 
-        public boolean MonsterIsAlive = true;
+        public boolean monsterIsAlive = true;
         //public int damageofMonster =  
     
         public Weapon primaryWeapon;
     
         public Monster(String monsterName, int numHearts, String monsterSoundEffect, String monsterColor, Weapon primaryWeapon) { 
-            this.MonsterName = monsterName;
-            this.NumberofHearts = numHearts; 
-            this.MonsterSoundEffects = monsterSoundEffect; 
-            this.MonsterColor = monsterColor; 
+            this.monsterName = monsterName;
+            this.numberOfHearts = numHearts;
+            this.monsterSoundEffects = monsterSoundEffect;
+            this.monsterColor = monsterColor;
             this.primaryWeapon = primaryWeapon;
-            MonstersCreated++; 
-            MonstersAlive++; 
-        } 
+            monstersCreated++;
+            monstersAlive++;
+        }
 
-        public String monsterSpeak() { 
-            if (this.MonsterIsAlive) { 
-                return "The monster says " + this.MonsterSoundEffects;
-            } 
-            else {
+        public String monsterSpeak() {
+            if (this.monsterIsAlive) {
+                return "The monster says " + this.monsterSoundEffects;
+            } else {
                 return "The monster doesn't say anything 'cause it's dead";
             }
-        } 
-    
+        }
+
         public String writeLnMonsterSummary() {
-            return "The " + this.MonsterName + " has " + this.NumberofHearts + " hearts.";
+            return "The " + this.monsterName + " has " + this.numberOfHearts + " hearts.";
         }
     }
