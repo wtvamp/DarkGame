@@ -7,17 +7,59 @@ import com.vailsys.elchicagovoid.gamesupport.interfaces.ISpell;
 
 public class SuperHero {
     
-    public String Ability;
+    private String Ability;
     
-    public int Health;
+    public String getAbility(){
+        return Ability;
+    }
+    public void setAblity(String heroAblity ) {
+        this.Ability = heroAblity;
+    }
+    private int Health;
     
-    public String HeroName;
+    public int getHealth() {
+        return Health;
+    }
+
+    // monsterHeFights.setnumberOfHearts(monsterHeFights.getnumberOfHearts() - heroFighting.damagePerTurn);
+    // current health is 90
+    // addHealth = 25
+    // if( this.Health + addHealth > 100){}
+    public void addHealth(int addHealth) {
+        if(this.Health + addHealth > 100){
+            this.setHealth(100);
+        } else {
+            this.Health += addHealth;
+        }
+    }
+
+
+    public void setHealth(int healthSetter){
+        this.Health = healthSetter;
+    }
+
+    private String heroName;
     
-    public Weapon HeroWeapon;
+    public String getHeroName(){
+        return heroName;
+    }
     
-    public Weapon HeroWeapon2;
+    public void setHeroName(String nameOfHeroSetter) {
+        this.heroName = nameOfHeroSetter;
+    }
+    public Weapon heroWeapon;
     
-    public String characterName;
+    public Weapon heroWeapon2;
+    
+    private String characterName;
+    
+    public String getCharacterName() {
+        return characterName;
+    }
+
+    public void setCharacterName(String nameOfCharacterSetter){
+        this.characterName = nameOfCharacterSetter;
+    }
     
     public int damagePerTurn;
     
@@ -28,10 +70,11 @@ public class SuperHero {
         return this.heroSpellChoices;        
     }
 
-    public SuperHero(final String heroNameFromApp, final Weapon heroWeaponFromApp, final Weapon heroWeapon2FromApp, final int heroHealthFromApp, final String characterNameFromApp, final int damagePerTurnFromApp) {
-        this.HeroName = heroNameFromApp;
-        this.HeroWeapon = heroWeaponFromApp;
-        this.HeroWeapon2 = heroWeapon2FromApp;
+    public SuperHero(final String heroNameFromApp, final Weapon heroWeaponFromApp, 
+    final Weapon heroWeapon2FromApp, final int heroHealthFromApp, final String characterNameFromApp, final int damagePerTurnFromApp) {
+        this.heroName = heroNameFromApp;
+        this.heroWeapon = heroWeaponFromApp;
+        this.heroWeapon2 = heroWeapon2FromApp;
         this.Health = heroHealthFromApp;
         this.characterName = characterNameFromApp;
         this.damagePerTurn = damagePerTurnFromApp;

@@ -1,9 +1,9 @@
 package com.vailsys.elchicagovoid.gamesupport.interfaces;
 
 public interface IVehicle {
-    public void drive();
+    public Boolean drive();
     public Boolean brake();
-    public void turn();
+    public String turn();
     public void honk();
     public void hold(Object item);
     public void shield();

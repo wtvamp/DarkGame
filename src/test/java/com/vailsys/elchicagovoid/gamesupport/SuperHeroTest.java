@@ -10,21 +10,23 @@ class SuperHeroTest{
 
 void testSuperHero(){
     SuperHero ironMan = new SuperHero("Avenger", new Weapon(8, 8, "lazer blasters", "lazer"), new Weapon(2, 2, "lazer chest beam","lazer"), 1000,"Tony Stark",50);
-    assertEquals("Avenger", ironMan.HeroName );
-    assertEquals(8, ironMan.HeroWeapon.numOfAllowedAttacks);
-    assertEquals(8, ironMan.HeroWeapon.attackCounter);
-    assertEquals("lazer blasters", ironMan.HeroWeapon.weaponName);
-    assertEquals("lazer", ironMan.HeroWeapon.attackType);
-    assertEquals(2, ironMan.HeroWeapon2.numOfAllowedAttacks);
-    assertEquals(2, ironMan.HeroWeapon2.attackCounter);
-    assertEquals("lazer chest beam", ironMan.HeroWeapon2.weaponName);
-    assertEquals("lazer", ironMan.HeroWeapon.attackType);
-    assertEquals(1000, ironMan.Health);
-    assertEquals("Tony Stark", ironMan.characterName);
+    assertEquals("Avenger", ironMan.getHeroName());
+    assertEquals(8, ironMan.heroWeapon.numOfAllowedAttacks);
+    assertEquals(8, ironMan.heroWeapon.getattackCounter());
+    assertEquals("lazer blasters", ironMan.heroWeapon.getweaponName());
+    assertEquals("lazer", ironMan.heroWeapon.getattackType());
+    assertEquals(2, ironMan.heroWeapon2.numOfAllowedAttacks);
+    assertEquals(2, ironMan.heroWeapon2.getattackCounter());
+    assertEquals("lazer chest beam", ironMan.heroWeapon2.getweaponName());
+    assertEquals("lazer", ironMan.heroWeapon.getattackType());
+    assertEquals(1000, ironMan.getHealth());
+    assertEquals("Tony Stark", ironMan.getCharacterName());
     assertEquals(50, ironMan.damagePerTurn);
 
-    System.out.println("\n\nYou have selected a " + ironMan.HeroName + "\nThis character's name is " + ironMan.characterName + "\n" +
-    ironMan.characterName + " uses a " + ironMan.HeroWeapon.weaponName + " and " + ironMan.HeroWeapon2.weaponName + " that deal " + ironMan.damagePerTurn + " damage");
+    System.out.println("\n\nYou have selected a " + ironMan.getHeroName() + "\nThis character's name is " + ironMan.getCharacterName() + "\n"
+            +
+    ironMan.getCharacterName() + " uses a " + ironMan.heroWeapon.getweaponName() + " and "
+            + ironMan.heroWeapon2.getweaponName() + " that deal " + ironMan.damagePerTurn + " damage");
         
     }
 }

@@ -19,7 +19,7 @@ public class Menu {
 
     public SuperHero chooseHero() {
         SuperHero hero;
-        switch (choice)
+        switch(choice)
         {
             case "1":
                 hero = new SuperHero("Wizard",  new Weapon(8, 8, "Staff", "Magic"), new Weapon(4, 4, "Potion", "Magic"), 100,"Alex", 45);
@@ -47,7 +47,7 @@ public class Menu {
                 hero.getHeroSpellChoices().add(new HealingSpell());
                 break;        
         }
-        System.out.println("\n\nYou have selected " + hero.characterName + " the " + hero.HeroName + "\n\n");
+        System.out.println("\n\nYou have selected " + hero.getCharacterName() + " the " + hero.getHeroName() + "\n\n");
         return hero;
     }
 

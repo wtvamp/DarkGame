@@ -22,17 +22,17 @@ public class MonsterTest {
         assertEquals(100, this.systemUnderTest.NumberofHearts);
         assertEquals("Bruh", this.systemUnderTest.MonsterSoundEffects);
         assertEquals("Darkness", this.systemUnderTest.MonsterColor);
-        assertEquals(10, this.systemUnderTest.primaryWeapon.numOfAllowedAttacks);
-        assertEquals(10, this.systemUnderTest.primaryWeapon.attackCounter);
-        assertEquals("The cheese touch", this.systemUnderTest.primaryWeapon.weaponName);
-        assertEquals("Cheese", this.systemUnderTest.primaryWeapon.attackType);
+        assertEquals(10, this.systemUnderTest.primaryWeapon.getWeaponnumOfAllowedAttacks());
+        assertEquals(10, this.systemUnderTest.primaryWeapon.getattackCounter());
+        assertEquals("The cheese touch", this.systemUnderTest.primaryWeapon.getweaponName());
+        assertEquals("Cheese", this.systemUnderTest.primaryWeapon.getattackType());
 
         System.out.println("You have encountered " + this.systemUnderTest.MonsterName + 
         ".\n He has " + this.systemUnderTest.NumberofHearts + " health" + 
         ".\n He says " + this.systemUnderTest.monsterSpeak() + 
         ".\n His color is " + this.systemUnderTest.MonsterColor +
-        ".\n His weapon is " + this.systemUnderTest.primaryWeapon.weaponName +
-        ".\n His weapon type is" + this.systemUnderTest.primaryWeapon.attackType + ".");
+        ".\n His weapon is " + this.systemUnderTest.primaryWeapon.getweaponName() +
+        ".\n His weapon type is" + this.systemUnderTest.primaryWeapon.getattackType() + ".");
     }
 
     @Test
@@ -48,8 +48,8 @@ public class MonsterTest {
     }
 
     @Test
-    void testMonsterHealth() {
-        assertEquals(100, this.systemUnderTest.MonsterHealth);
+    void testMonsterNumOfHearts() {
+        assertEquals(100, this.systemUnderTest.NumberofHearts);
     }
 
 }
