@@ -47,10 +47,26 @@ public class SuperHero {
     public void setHeroName(String nameOfHeroSetter) {
         this.heroName = nameOfHeroSetter;
     }
-    public Weapon heroWeapon;
+    private Weapon heroWeapon;
     
-    public Weapon heroWeapon2;
+    public Weapon getHeroWeapon(){
+        return heroWeapon;
+    }
+
+    public void setHeroWeapon(Weapon weaponSetter){
+        this.heroWeapon = weaponSetter;
+    }
+
+    private Weapon heroWeapon2;
     
+    public Weapon getHeroWeapon2(){
+        return heroWeapon2; 
+    }
+
+    public void setHeroWeapon2 ( Weapon heroWeapon2Setter){
+        this.heroWeapon2 = heroWeapon2Setter;
+    }
+
     private String characterName;
     
     public String getCharacterName() {
@@ -61,7 +77,17 @@ public class SuperHero {
         this.characterName = nameOfCharacterSetter;
     }
     
-    public int damagePerTurn;
+    private int damagePerTurn;
+
+    public int getDamagePerTurn(){
+        return damagePerTurn;
+    }
+
+    public void damagePerTurnSetter (int damagePerTurnSetter){
+        this.damagePerTurn = damagePerTurnSetter; 
+    }
+
+
     
     private List<ISpell> heroSpellChoices;
     
