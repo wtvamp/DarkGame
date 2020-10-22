@@ -3,11 +3,57 @@ package com.vailsys.elchicagovoid.gamesupport;
 
     public class Home
     {
-        public int floors;
-        public int windows;
-        public String address;
-        public int fireEscp;
-        public int garage;
+        private int floors;
+
+        public int getFloors() {
+          return floors;
+        }
+
+        public void setFloors(int floorSetter){
+           this.floors = floorSetter;
+        }
+
+        private int windows;
+        
+        public int getWindows() {
+           return windows;
+        }
+
+        public void setWindows(int windowSetter){
+           this.windows = windowSetter; 
+        }
+   
+        private String address;
+
+        public String getAddress(){
+           return address;
+        }
+
+        public void setAddress(String adressSetter){
+           this.address = adressSetter;
+        }
+
+        private int fireEscape;
+        
+        public int getFireEscape(){
+           return fireEscape;
+        }
+
+        public void setFireEscape(int fireEscapeSetter){
+           this.fireEscape = fireEscapeSetter; 
+        }
+        private int garage;
+
+        public int getGarage(){
+           return garage;
+        }
+
+        public void setGarage(int garageSetter){
+           this.garage = garageSetter;
+        }
+
+   
+
 
         // public void home()
         // {
@@ -18,7 +64,7 @@ package com.vailsys.elchicagovoid.gamesupport;
         this.floors = floorsFromApp;
         this.windows = windowsFromApp;
         this.address = addressFromApp;
-        this.fireEscp = fireEscpFromApp;
+        this.fireEscape = fireEscpFromApp;
         this.garage = garageFromApp;
      }
    }
