@@ -10,8 +10,8 @@ public class Monster {
         public void setMonsterName(String monsterNameSetter){
             this.monsterName = monsterNameSetter;
         }
-        public static int monstersCreated = 0; 
-        public static int monstersAlive = 0; 
+        // private static int monstersCreated = 0; 
+        // private static int monstersAlive = 0; 
         
         private int numberOfHearts; 
         public int getnumberOfHearts(){
@@ -47,10 +47,18 @@ public class Monster {
         }
 
         //Makes it so that Mons health will always be 100hp 
-        public boolean monsterIsAlive = true;
+        private boolean monsterIsAlive = true;
         //public int damageofMonster =  
     
-        public Weapon primaryWeapon;
+        private Weapon primaryWeapon;
+        public Weapon getPrimaryWeapon(){
+            return primaryWeapon;
+        }
+
+        public void setPrimaryWeapon(Weapon PrimaryWeapon){
+            this.primaryWeapon = PrimaryWeapon;
+        }
+
     
         public Monster(String monsterName, int numHearts, String monsterSoundEffect, String monsterColor, Weapon primaryWeapon) { 
             this.monsterName = monsterName;
@@ -58,8 +66,6 @@ public class Monster {
             this.monsterSoundEffects = monsterSoundEffect;
             this.monsterColor = monsterColor;
             this.primaryWeapon = primaryWeapon;
-            monstersCreated++;
-            monstersAlive++;
         }
 
         public String monsterSpeak() {
