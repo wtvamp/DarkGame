@@ -46,11 +46,11 @@ public class TV {
       // Setter
       public void setSize(int newSize) {
         this.size = newSize;
-    //   }
+      }
 
     //getter
     public int getMaxChannel() {
-        return maxchannel;
+        return maxChannel;
       }
     
     //   // Setter
