@@ -7,13 +7,13 @@ class HomeTest {
     @Test
     void testHome(){
         Home myCrib = new Home(4, 7, "444 w. walmart", 2, 6);
-        assertEquals(4, myCrib.floors);
-        assertEquals(7, myCrib.windows);
-        assertEquals("444 w. walmart", myCrib.address);
-        assertEquals(2, myCrib.fireEscp);
-        assertEquals(6, myCrib.garage);
+        assertEquals(4, myCrib.getFloors());
+        assertEquals(7, myCrib.getWindows());
+        assertEquals("444 w. walmart", myCrib.getAddress());
+        assertEquals(2, myCrib.getFireEscape());
+        assertEquals(6, myCrib.getFireEscape());
 
-        System.out.println("Your home has " + myCrib.floors + " floor(s) and also has " + myCrib.windows +" window(s)");
+        System.out.println("Your home has " + myCrib.getFloors() + " floor(s) and also has " + myCrib.getWindows() +" window(s)");
         
     
     }

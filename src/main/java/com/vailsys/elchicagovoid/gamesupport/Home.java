@@ -25,11 +25,11 @@ package com.vailsys.elchicagovoid.gamesupport;
    
         private String address;
 
-        public String getAdrees(){
+        public String getAddress(){
            return address;
         }
 
-        public void setAdress(String adressSetter){
+        public void setAddress(String adressSetter){
            this.address = adressSetter;
         }
 
