@@ -28,7 +28,7 @@ public class TVTest {
         System.setOut(originalOut);
     }
     
-    @Test
+    @Test 
     public void changeChannelUp() {
         this.systemUnderTest.changeChannelUp();
         assertEquals("the TV changed the channel to 9", outContent.toString().trim());
@@ -48,14 +48,14 @@ public class TVTest {
 
     @Test
     public void changeChannelOverMax(){
-        this.systemUnderTest.channel = 60;
+        this.systemUnderTest.setChannel(60);
         this.systemUnderTest.changeChannelUp();
         assertEquals("the TV changed the channel to 1", outContent.toString().trim());
     }
 
     @Test
     public void changeChannelUnderMin(){
-        this.systemUnderTest.channel = 1;
+        this.systemUnderTest.setChannel(1);
         this.systemUnderTest.changeChannelDown();
         assertEquals("the TV changed the channel to 60", outContent.toString().trim());
     }
