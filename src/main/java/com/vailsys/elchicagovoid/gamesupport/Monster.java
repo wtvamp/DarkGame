@@ -49,6 +49,14 @@ public class Monster {
         //Makes it so that Mons health will always be 100hp 
         private boolean monsterIsAlive = true;
         //public int damageofMonster =  
+        //public int damageofMonster =  
+        public boolean getmonsterIsAlive(){
+            return monsterIsAlive;
+        }
+
+        public void setmonsterIsAlive(boolean monsterIsAlive){
+            this.monsterIsAlive = monsterIsAlive;
+        }
     
         private Weapon primaryWeapon;
         public Weapon getPrimaryWeapon(){
