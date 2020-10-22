@@ -28,8 +28,8 @@ public class Encounter {
         System.out.println("A " + this.monsterHeFights.getMonsterName() + " appears");
         System.out.println(monsterHeFights.monsterSpeak());
         System.out.println(monsterHeFights.writeLnMonsterSummary());
-        System.out.println("The " + this.monsterHeFights.getMonsterName() + " carries a " + monsterHeFights.primaryWeapon.getweaponName());
-        System.out.println(monsterHeFights.primaryWeapon.PrintWeaponStatus());
+        System.out.println("The " + this.monsterHeFights.getMonsterName() + " carries a " + monsterHeFights.getPrimaryWeapon().getweaponName());
+        System.out.println(monsterHeFights.getPrimaryWeapon().PrintWeaponStatus());
         System.out.print("Press ENTER to Continue\n");
         System.console().readLine();
     }
@@ -93,7 +93,7 @@ public class Encounter {
                     System.out.println("\n");
                     System.out.println("Press ENTER to Continue");
                     System.console().readLine();
-                    System.out.println("\n" + monsterHeFights.getMonsterName() + " attacks again, with the "+ monsterHeFights.primaryWeapon.getweaponName());
+                    System.out.println("\n" + monsterHeFights.getMonsterName() + " attacks again, with the "+ monsterHeFights.getPrimaryWeapon().getweaponName());
                     int randomAttackDmg = randomAttack.nextInt(10) + 10;
                     heroFighting.addHealth(-randomAttackDmg);// TODO remove addhealth and make function for removehealth
                     System.out.println("Ouch, " + heroFighting.getCharacterName() + " shouts: ''AHHH!!''");
