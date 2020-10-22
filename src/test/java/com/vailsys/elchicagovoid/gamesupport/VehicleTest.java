@@ -40,11 +40,9 @@
 //     @Test
 //     void Testturn() {
 //         // TODO Auto-generated method stub
-//         assertEquals(this.systemUnderTest.driver.getCharacterName() + " the " + this.systemUnderTest.getHeroName() + " did a Tokyo drift. Skeet skeet.", this.systemUnderTest.turn());
+//         assertEquals(this.systemUnderTest.driver.getCharacterName() + " the " + this.systemUnderTest.driver.getHeroName() + " did a Tokyo drift. Skeet skeet.", this.systemUnderTest.turn());
 //     }
 
-//     private void assetrEquals(String string, Object turn) {
-//     }
 
 //     void Testhold(Object item) {
 //         // TODO Auto-generated method stub
