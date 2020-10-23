@@ -36,18 +36,24 @@ public class Vehicle implements IVehicle {
     }
 
     @Override
-    public void hold(Object item) {
-        System.out.println(driver.getCharacterName() + " the " + driver.getHeroName() + " is carrying x with him in the car");
+    public String hold(Object item) {
+        String returnHoldMessage = driver.getCharacterName() + " the " + driver.getHeroName() + " is carrying x with him in the car";
+        System.out.println(returnHoldMessage);
+        return returnHoldMessage;
     }
 
     @Override
-    public void shield() {
-        System.out.println(driver.getCharacterName() + " the " + driver.getHeroName() + " blocked attack by hiding behind a vehicle.");
+    public String shield() {
+        String returnShieldMessage = driver.getCharacterName() + " the " + driver.getHeroName() + " blocked attack by hiding behind a vehicle.";
+        System.out.println(returnShieldMessage);
+        return returnShieldMessage;
     }
 
     @Override
-    public void crash() {
-        System.out.println("Oh no " + driver.getCharacterName() + " the " + driver.getHeroName() + " crashed.  They could save 15% or more on car insurance if they switch to Geico.");
+    public String crash() {
+        String returnCrashMessage = "Oh no " + driver.getCharacterName() + " the " + driver.getHeroName() + " crashed.  They could save 15% or more on car insurance if they switch to Geico.";
+        System.out.println(returnCrashMessage);
+        return returnCrashMessage;
     }
 
 }

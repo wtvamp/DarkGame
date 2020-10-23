@@ -41,17 +41,14 @@ public class VehicleTest  {
 
 
     void Testhold(Object item) {
-        // TODO Auto-generated method stub
-
+        assertEquals(this.systemUnderTest.driver.getCharacterName() + " the " + this.systemUnderTest.driver.getHeroName() + " is carrying x with him in the car", this.systemUnderTest.hold(item));
     }
-
+    @Test
     void Testshield() {
-        // TODO Auto-generated method stub
-
+        assertEquals(this.systemUnderTest.driver.getCharacterName() + " the " + this.systemUnderTest.driver.getHeroName() + " blocked attack by hiding behind a vehicle.", this.systemUnderTest.shield());
     }
-
+    @Test
     void Testcrash() {
-        // TODO Auto-generated method stub
-
+        assertEquals("Oh no " + this.systemUnderTest.driver.getCharacterName() + " the " + this.systemUnderTest.driver.getHeroName() + " crashed.  They could save 15% or more on car insurance if they switch to Geico.", this.systemUnderTest.crash());
     }
 }
