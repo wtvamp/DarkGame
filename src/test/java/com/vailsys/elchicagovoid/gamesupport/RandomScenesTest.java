@@ -19,5 +19,6 @@ public class RandomScenesTest {
     void testMonster() {
         systemUnderTest.loadScenesFromTextFile("src/main/java/com/vailsys/elchicagovoid/scenes/scenes.txt");
         assertEquals("src/main/java/com/vailsys/elchicagovoid/scenes/scenes.txt", systemUnderTest.getFileLocation());
+        
     }
 }
