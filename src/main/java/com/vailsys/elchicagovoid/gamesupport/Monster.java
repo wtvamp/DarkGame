@@ -67,7 +67,7 @@ public class Monster {
             this.primaryWeapon = PrimaryWeapon;
         }
 
-    
+
         public Monster(String monsterName, int numHearts, String monsterSoundEffect, String monsterColor, Weapon primaryWeapon) { 
             this.monsterName = monsterName;
             this.numberOfHearts = numHearts;
