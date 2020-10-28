@@ -22,6 +22,7 @@ class WeaponTest {
         assertEquals("Cross", testCross.getweaponName());
         assertEquals("Holy", testCross.getattackType());
         assertEquals("Cross has 5/5 remaining.\nThis Cross is using Holy type of attack. \n", testCross.PrintWeaponStatus());
+        assertEquals("s", "s");
 
         System.out.println("Your weapon is a " + testCross.getweaponName() + " and it can be used "
                 + testCross.numOfAllowedAttacks + " times \nCurrently, " + testCross.PrintWeaponStatus());
