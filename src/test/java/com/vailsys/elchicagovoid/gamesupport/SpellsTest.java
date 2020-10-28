@@ -2,32 +2,44 @@ package com.vailsys.elchicagovoid.gamesupport;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import com.vailsys.elchicagovoid.gamesupport.magicspellfolder.BaseSpell;
+
 import org.junit.jupiter.api.BeforeEach;
+
 import org.junit.jupiter.api.Test;
 
-public class SpellsTest {
-    private Spells SUT;
+import java.io.ByteArrayOutputStream;
 
+import java.io.PrintStream;
 
-@BeforeEach
+class SpellsTest {
+    private BaseSpell SUT;
+    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    protected String spellName;
+    
+    @BeforeEach 
+    void assignSpell() {
+        this.SUT = new BaseSpell();
+        System.setOut(new PrintStream(outContent));
+    }
 
-@Test
-void spellsWarningMessage(){
-    assertEquals("", this.SUT.spellWarningMessage());
-}this.SSUT.sWarningMessagepellWarningMessage)
-public class SpellsTest {
+    @Test
+    void TestspellsWarningMessage(){
+        this.SUT.spellWarningMessage();
+        assertEquals("Spell can only be used once.", outContent.toString().trim()); 
+        
+    }
+
+    @Test
+    void TestspellIsUsesMessage(){
+        this.SUT.spellIsUsedMessage();
+        assertEquals("The spell evaporated into dust after it was cast.",outContent.toString().trim());
+    }
+
+    @Test
+    void TestgetSpellName(){    
+        this.SUT.getSpellName();
+        assertEquals("", this.SUT.getSpellName());
+    }
     
 }
-this.SSUT.sWarningMessagepellWarningMessageimport org.junit.jupiter.api.BeforeEach;
-
-
-public class SpellsTest {
-    
-}
-this.SSUT.sWarningMessagepellWarningMessageimport org.junit.jupiter.api.BeforeEach;
-
-()
-public class SpellsTest {
-    
-}
-this.SSUT.sWarningMessagepellWarningMessage
