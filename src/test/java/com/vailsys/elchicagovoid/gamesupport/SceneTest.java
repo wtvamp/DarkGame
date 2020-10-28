@@ -13,18 +13,16 @@ import java.util.ListResourceBundle;
 public class SceneTest {
     private Scene systemUnderTest;
     @BeforeEach
+    
+    void Scene(){
+        this.systemUnderTest = new Scene();
+}
 
 @Test
-void Testscenegenerator() {
+void testScene() {
     assertEquals("", this.systemUnderTest.getTextDescription());
     assertEquals("", this.systemUnderTest.getChoicePrompt());
     assertEquals("", this.systemUnderTest.getEpilogue());
-}
-
-// @Test
-// String sceneTestFile() {
-//     assertEquals("", this.systemUnderTest.getChoicePrompt());
-//     return null;
-    
-//     }
+   
+    }
 }
